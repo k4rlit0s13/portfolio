@@ -16,35 +16,38 @@ body {
     justify-content: center;
     height: 95vh;
 
-    gap: 20px;
+    gap: 20vh;
 }
 
 #textbox {
     padding: 5px;
-    background-color: red;
+    /* background-color: red; */
     color: white;
 }
 
 #footer {
-    background-color: blue;
+    /* background-color: blue; */
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10vh;
 }
 
 #textboxtop {
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
     font-family: "jaro";
     font-size: 2.5rem;
 }
 
 #textboxmiddle {
-    background-color: chocolate;
+    /* background-color: chocolate; */
     font-family: "jaro";
     font-size: 5rem;
     line-height: 5vh;
 }
 
 #textboxbottom {
-    background-color: salmon;
+    /* background-color: salmon; */
     display: flex;
     justify-content: end;
     font-family: "jaro";
@@ -52,38 +55,48 @@ body {
 }
 
 #boxstart {
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     display: flex;
     justify-content: center;
 }
 
 #boxstart a {
-    background-color: aqua;
+    /* background-color: aqua; */
+    border: 10px solid #6D614E;;
+    color: #6D614E;
+    border-radius: 3vw;
+    display: flex;
+    justify-content: center;
+    padding: 2vw 10vw 3vw 10vw;
     font-family: "jaro";
-    font-size: 4rem;
+    font-size: 3rem;
     text-decoration: none;
 }
 
 #boxlanguage {
     padding: 5px;
-    background-color: goldenrod;
+    /* background-color: goldenrod; */
 }
 
 #boxlanguage a {
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     font-family: "jaro";
     font-size: 3rem;
     text-decoration: none;
 }
 
 #boxlanguage a img {
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
+    margin: 0;
 }
 
 #boxlanguage a p {
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     margin: 0;
-}
+    color: #6D614E;}
 
 .modal {
     display: none;
