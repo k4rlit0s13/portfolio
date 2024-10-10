@@ -1,0 +1,21 @@
+body{
+    background-color: #2B1900;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 97vh;
+    animation: slideInRight 0.5s ease-out forwards;
+}
+
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%); /* Comienza fuera de la pantalla, a la derecha */
+        opacity: 0; /* Empieza invisible */
+    }
+    100% {
+        transform: translateX(0); /* Termina en su posición original */
+        opacity: 1; /* Termina completamente visible */
+    }
+}

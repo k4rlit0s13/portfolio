@@ -9,14 +9,12 @@ body {
     margin: 0;
     padding: 0;
     background-color: #A69273;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 95vh;
-
-    gap: 20vh;
+    gap: 6vh;
 }
 
 #textbox {
@@ -75,7 +73,6 @@ body {
 
 #boxlanguage {
     padding: 5px;
-    /* background-color: goldenrod; */
 }
 
 #boxlanguage a {
@@ -87,6 +84,17 @@ body {
     font-size: 3rem;
     text-decoration: none;
 }
+
+#boxstart a {
+    transition: color 0.3s ease, transform 0.3s ease; /* Aplicamos transición */
+}
+
+#boxstart a:hover {
+    color: white;
+    transform: scale(1.1); 
+    border: 10px solid #ffffff;;
+}
+
 
 #boxlanguage a img {
     /* background-color: yellowgreen; */
@@ -120,6 +128,21 @@ body {
 
 
 
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        background-color: #6D614E;
+    }
+    100% {
+        transform: translateX(-100%);
+        background-color: #2B1900;
+    }
+}
+
+/* Clase para aplicar la animación al cuerpo */
+.slide-out {
+    animation: slideOutLeft 0.5s forwards; /* Se moverá hacia la izquierda en 0.5 segundos */
+}
 
 
 
@@ -134,14 +157,11 @@ body {
 
 @media (min-width: 426px) and (max-height: 867px) {
     body {
-        margin: 0;
-        padding: 0;
-        background-color: #A69273;
-
-        display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        height: 95vh;
+        gap: 6vw;
     }
+}
+
+#textboxmiddle {
+    line-height: 13vh;
 }
