@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Esperar a que termine la animación antes de redirigir a la siguiente página
         setTimeout(function() {
-            window.location.href = "../src/viewsEnglish/home.html"; // Redirigir tras la animación
+            window.location.href = "./src/viewsEnglish/home.html"; // Redirigir tras la animación
         }, 400); // Coincide con la duración de la animación
     });
 });
