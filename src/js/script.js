@@ -22,5 +22,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 400); // Coincide con la duración de la animación
     });
 });
-
-
