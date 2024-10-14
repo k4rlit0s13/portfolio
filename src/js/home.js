@@ -53,6 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
         clearTimeout(timeoutId); // Limpiar cualquier temporizador anterior
         timeoutId = setTimeout(() => {
             cursorElement.src = '../storage/img/rightHand.svg'; // Volver a la imagen original después de 200 ms
-        }, 200);
+        }, 150);
     });
 });

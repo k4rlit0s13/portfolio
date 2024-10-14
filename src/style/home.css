@@ -4,9 +4,10 @@
 }
 
 
-body{
+body {
 
-    cursor: none; /* Oculta el cursor predeterminado */
+    cursor: none;
+    /* Oculta el cursor predeterminado */
 
     overflow-x: hidden;
     padding: 0;
@@ -19,23 +20,29 @@ body{
     align-items: center;
     padding-top: 20px;
     gap: 30px;
-    max-height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
     animation: slideInRight 0.5s ease-out forwards;
 }
 
 @keyframes slideInRight {
     0% {
-        transform: translateX(100%); /* Comienza fuera de la pantalla, a la derecha */
-        opacity: 0; /* Empieza invisible */
+        transform: translateX(100%);
+        /* Comienza fuera de la pantalla, a la derecha */
+        opacity: 0;
+        /* Empieza invisible */
     }
+
     100% {
-        transform: translateX(0); /* Termina en su posición original */
-        opacity: 1; /* Termina completamente visible */
+        transform: translateX(0);
+        /* Termina en su posición original */
+        opacity: 1;
+        /* Termina completamente visible */
     }
 }
 
 
-#mage{
+#mage {
     /* background-color: red; */
     display: flex;
     flex-direction: row;
@@ -44,12 +51,12 @@ body{
     width: 80%;
 }
 
-#mage img{
+#mage img {
     width: 100%;
 }
 
 
-#potions{
+#potions {
     /* background-color: blue; */
     display: flex;
     flex-direction: column;
@@ -59,7 +66,7 @@ body{
     width: 100%;
 }
 
-.potion{
+.potion {
     /* background-color: aqua; */
     display: flex;
     flex-direction: row;
@@ -67,7 +74,7 @@ body{
     align-items: center;
 }
 
-.potion a{
+.potion a {
     /* background-color: salmon; */
     display: flex;
     flex-direction: column;
@@ -80,19 +87,20 @@ body{
 }
 
 
-.potion a h2{
+.potion a h2 {
     font-family: "jaro";
     color: white;
     padding: 0;
     margin: 0;
     line-height: 0;
-    
+
 }
 
-#back a{
+#back a {
     text-decoration: none;
 }
-#back a h2{
+
+#back a h2 {
     font-family: "jaro";
     font-size: 2rem;
     text-decoration: none;
@@ -102,7 +110,7 @@ body{
     padding: 10px 40px;
 }
 
-#back a h2{
+#back a h2 {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -114,25 +122,31 @@ body{
 }
 
 
-#leftHand{
+#leftHand {
     display: none;
 }
-#rightHand{
+
+#rightHand {
     display: none;
 }
 
 
 /* Animación de shake para #aboutme img */
 @keyframes shake-aboutme {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
+
     25% {
         transform: translateX(5px);
     }
+
     50% {
         transform: translateX(-5px);
     }
+
     75% {
         transform: translateX(3px);
     }
@@ -140,15 +154,20 @@ body{
 
 /* Animación de shake para #project img */
 @keyframes shake-project {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     25% {
         transform: translateY(5px);
     }
+
     50% {
         transform: translateY(-5px);
     }
+
     75% {
         transform: translateY(3px);
     }
@@ -156,15 +175,20 @@ body{
 
 /* Animación de shake para #skills img */
 @keyframes shake-skills {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: rotate(0);
     }
+
     25% {
         transform: rotate(5deg);
     }
+
     50% {
         transform: rotate(-5deg);
     }
+
     75% {
         transform: rotate(3deg);
     }
@@ -172,15 +196,20 @@ body{
 
 /* Animación de shake para #education img */
 @keyframes shake-education {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
+
     25% {
         transform: scale(1.05);
     }
+
     50% {
         transform: scale(0.95);
     }
+
     75% {
         transform: scale(1.03);
     }
@@ -188,56 +217,80 @@ body{
 
 /* Animación de escalado grande */
 @keyframes scale-up-large {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); } /* Tamaño de escala más grande */
-    100% { transform: scale(1.2); } /* Mantener tamaño grande */
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    /* Tamaño de escala más grande */
+    100% {
+        transform: scale(1.2);
+    }
+
+    /* Mantener tamaño grande */
 }
 
 /* Animación normal en el estado original */
 #aboutme img {
-    animation: shake-aboutme 2s infinite ease-in-out; /* Mantener animación shake */
+    animation: shake-aboutme 2s infinite ease-in-out;
+    /* Mantener animación shake */
     filter: drop-shadow(0 0 15px rgba(255, 0, 1, 0.5));
     transition: filter 0.3s ease, transform 0.3s ease;
 }
 
 /* Hover para la imagen con la animación de escalado */
 #aboutme img:hover {
-    animation: scale-up-large 0.5s forwards; /* Usar la animación más grande */
-    animation-play-state: running; /* Asegura que la animación se ejecute */
-    filter: drop-shadow(0 0 50px rgba(255, 0, 1, 1)); /* Aura roja intensa al hover */
+    animation: scale-up-large 0.5s forwards;
+    /* Usar la animación más grande */
+    animation-play-state: running;
+    /* Asegura que la animación se ejecute */
+    filter: drop-shadow(0 0 50px rgba(255, 0, 1, 1));
+    /* Aura roja intensa al hover */
 }
 
 /* Repite esto para las otras imágenes */
 #project img {
-    animation: shake-project 3s infinite ease-in-out; /* Mantener animación shake */
+    animation: shake-project 3s infinite ease-in-out;
+    /* Mantener animación shake */
     filter: drop-shadow(0 0 15px rgba(251, 255, 1, 0.5));
 }
 
 #project img:hover {
-    animation: scale-up-large 0.5s forwards; /* Usar la animación más grande */
-    animation-play-state: running; /* Asegura que la animación se ejecute */
+    animation: scale-up-large 0.5s forwards;
+    /* Usar la animación más grande */
+    animation-play-state: running;
+    /* Asegura que la animación se ejecute */
     filter: drop-shadow(0 0 50px rgba(251, 255, 1, 1));
 }
 
 #skills img {
-    animation: shake-skills 2.5s infinite ease-in-out; /* Mantener animación shake */
+    animation: shake-skills 2.5s infinite ease-in-out;
+    /* Mantener animación shake */
     filter: drop-shadow(0 0 15px rgba(1, 183, 255, 0.5));
 }
 
 #skills img:hover {
-    animation: scale-up-large 0.5s forwards; /* Usar la animación más grande */
-    animation-play-state: running; /* Asegura que la animación se ejecute */
+    animation: scale-up-large 0.5s forwards;
+    /* Usar la animación más grande */
+    animation-play-state: running;
+    /* Asegura que la animación se ejecute */
     filter: drop-shadow(0 0 50px rgba(1, 183, 255, 1));
 }
 
 #education img {
-    animation: shake-education 3s infinite ease-in-out; /* Mantener animación shake */
+    animation: shake-education 3s infinite ease-in-out;
+    /* Mantener animación shake */
     filter: drop-shadow(0 0 15px rgba(31, 255, 1, 0.5));
 }
 
 #education img:hover {
-    animation: scale-up-large 0.5s forwards; /* Usar la animación más grande */
-    animation-play-state: running; /* Asegura que la animación se ejecute */
+    animation: scale-up-large 0.5s forwards;
+    /* Usar la animación más grande */
+    animation-play-state: running;
+    /* Asegura que la animación se ejecute */
     filter: drop-shadow(0 0 50px rgba(31, 255, 1, 1));
 }
 
@@ -245,17 +298,33 @@ body{
 
 /* Animación de shake suave */
 @keyframes gentle-shake {
-    0% { transform: translate(0); }
-    25% { transform: translate(2px, 2px); }
-    50% { transform: translate(-2px, -2px); }
-    75% { transform: translate(2px, -2px); }
-    100% { transform: translate(0); }
+    0% {
+        transform: translate(0);
+    }
+
+    25% {
+        transform: translate(2px, 2px);
+    }
+
+    50% {
+        transform: translate(-2px, -2px);
+    }
+
+    75% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
 }
 
 /* Aplicar la animación a la imagen */
 #facemage {
-    animation: gentle-shake 3s infinite ease-in-out; /* Cambia 3s a la duración que desees */
-    filter: drop-shadow(0 0 10px rgba(29, 1, 1, 0.7)); /* Efecto de sombra suave */
+    animation: gentle-shake 3s infinite ease-in-out;
+    /* Cambia 3s a la duración que desees */
+    filter: drop-shadow(0 0 10px rgba(29, 1, 1, 0.7));
+    /* Efecto de sombra suave */
 }
 
 
@@ -263,58 +332,84 @@ body{
 /* Animación de movimiento de muñeca */
 @keyframes wrist-movement {
     0% {
-        transform: rotate(0deg) translateY(0); /* Posición inicial */
+        transform: rotate(0deg) translateY(0);
+        /* Posición inicial */
     }
+
     25% {
-        transform: rotate(-10deg) translateY(-20px); /* Movimiento hacia arriba y rotación */
+        transform: rotate(-10deg) translateY(-20px);
+        /* Movimiento hacia arriba y rotación */
     }
+
     50% {
-        transform: rotate(0deg) translateY(0); /* Regresa a la posición inicial */
+        transform: rotate(0deg) translateY(0);
+        /* Regresa a la posición inicial */
     }
+
     75% {
-        transform: rotate(10deg) translateY(20px); /* Movimiento hacia abajo y rotación */
+        transform: rotate(10deg) translateY(20px);
+        /* Movimiento hacia abajo y rotación */
     }
+
     100% {
-        transform: rotate(0deg) translateY(0); /* Regresa a la posición inicial */
+        transform: rotate(0deg) translateY(0);
+        /* Regresa a la posición inicial */
     }
 }
 
 /* Aplicar la animación a la mano izquierda */
 #leftHand {
-    animation: wrist-movement 2s infinite ease-in-out; /* Cambia 2s a la duración que desees */
-    filter: drop-shadow(30px 30px 50px rgba(255, 255, 121, 0.7)); /* Efecto de sombra suave */
+    animation: wrist-movement 2s infinite ease-in-out;
+    /* Cambia 2s a la duración que desees */
+    filter: drop-shadow(30px 30px 50px rgba(255, 255, 121, 0.7));
+    /* Efecto de sombra suave */
 }
 
 
 /* Animación de movimiento de muñeca (invertido) */
 @keyframes wrist-movement-right {
     0% {
-        transform: rotate(0deg) translateY(0); /* Posición inicial */
+        transform: rotate(0deg) translateY(0);
+        /* Posición inicial */
     }
+
     25% {
-        transform: rotate(10deg) translateY(-20px); /* Movimiento hacia arriba y rotación (invertido) */
+        transform: rotate(10deg) translateY(-20px);
+        /* Movimiento hacia arriba y rotación (invertido) */
     }
+
     50% {
-        transform: rotate(0deg) translateY(0); /* Regresa a la posición inicial */
+        transform: rotate(0deg) translateY(0);
+        /* Regresa a la posición inicial */
     }
+
     75% {
-        transform: rotate(-10deg) translateY(20px); /* Movimiento hacia abajo y rotación (invertido) */
+        transform: rotate(-10deg) translateY(20px);
+        /* Movimiento hacia abajo y rotación (invertido) */
     }
+
     100% {
-        transform: rotate(0deg) translateY(0); /* Regresa a la posición inicial */
+        transform: rotate(0deg) translateY(0);
+        /* Regresa a la posición inicial */
     }
 }
 
 /* Aplicar la animación a la mano derecha */
 #rightHand {
-    animation: wrist-movement-right 2s infinite ease-in-out; /* Cambia 2s a la duración que desees */
-    filter: drop-shadow(-20px 30px 50px rgba(255, 255, 121, 0.7)); /* Efecto de sombra suave */
+    animation: wrist-movement-right 2s infinite ease-in-out;
+    /* Cambia 2s a la duración que desees */
+    filter: drop-shadow(-20px 30px 50px rgba(255, 255, 121, 0.7));
+    /* Efecto de sombra suave */
 }
 
 
 
-#aboutme, #project, #skills, #education, #back a {
-    cursor: none; 
+#aboutme,
+#project,
+#skills,
+#education,
+#back a {
+    cursor: none;
 }
 
 
@@ -328,80 +423,93 @@ body{
 
 /*mobile super peque;o*/
 @media screen and (max-width: 320px) {
-    body{
+    body {
         padding: 60px;
         gap: 0px;
         height: 100vh;
         align-items: center;
         justify-content: center;
     }
-    .potion a{
+
+    .potion a {
         width: 100px;
     }
- 
-    #leftHand{
-        display: none;
-    }
-    #rightHand{
+
+    #leftHand {
         display: none;
     }
 
-    #aboutme, #project, #skills, #education, #back a {
-        cursor: default; 
+    #rightHand {
+        display: none;
+    }
+
+    #aboutme,
+    #project,
+    #skills,
+    #education,
+    #back a {
+        cursor: default;
     }
 }
 
 /*mobile horizontal*/
 @media screen and (max-height:450px) {
-    body{
+    body {
         overflow: auto;
         padding-top: 20px;
         gap: 30px;
         align-items: center;
         justify-content: center;
     }
-    #potions{
+
+    #potions {
         flex-direction: row;
         gap: 0px;
         width: 100vw;
     }
-    
-    .potion{
+
+    .potion {
         width: 50vw;
         gap: 0px;
         justify-content: space-around;
     }
-    
-    .potion a{
+
+    .potion a {
         align-items: center;
         width: 100px;
         padding: 0px;
         gap: 60px;
     }
 
-    #leftHand{
+    #leftHand {
         display: block;
     }
-    #rightHand{
+
+    #rightHand {
         display: block;
     }
 
 
-    
+
 }
 
 @media screen and (max-width:1039px) {
-    body{
+    body {
         cursor: default;
     }
-    #aboutme, #project, #skills, #education, #back a {
-        cursor: default; 
+
+    #aboutme,
+    #project,
+    #skills,
+    #education,
+    #back a {
+        cursor: default;
     }
 }
 
 /*Pc*/
 @media screen and (min-width:1040px) {
-    body{
+    body {
         overflow: hidden;
         flex-direction: column;
         justify-content: center;
@@ -409,20 +517,21 @@ body{
         gap: 20px;
         height: 97vh;
     }
-    #mage{
+
+    #mage {
         /* background-color: red; */
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
     }
-    
-    #mage img{
+
+    #mage img {
         width: 100%;
     }
-    
-    
-    #potions{
+
+
+    #potions {
         /* background-color: blue; */
         display: flex;
         flex-direction: row;
@@ -431,8 +540,8 @@ body{
         gap: 20px;
         width: 100%;
     }
-    
-    .potion{
+
+    .potion {
         /* background-color: aqua; */
         display: flex;
         flex-direction: row;
@@ -440,8 +549,8 @@ body{
         align-items: center;
         gap: 20px;
     }
-    
-    .potion a{
+
+    .potion a {
         /* background-color: salmon; */
         display: flex;
         flex-direction: column;
@@ -453,18 +562,19 @@ body{
         gap: 30px;
         text-decoration: none;
     }
-    
-    .potion a h2{
+
+    .potion a h2 {
         font-family: "jaro";
         color: white;
         padding: 0;
         margin: 0;
     }
-    
-    #leftHand{
+
+    #leftHand {
         display: block;
     }
-    #rightHand{
+
+    #rightHand {
         display: block;
         opacity: 0;
     }
