@@ -4,27 +4,30 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeModal = document.getElementById('close-modal');
     const startButton = document.getElementById('startButton');
 
-    // Inicialmente, el modal debería estar oculto (esto es redundante ya que ya lo tienes en CSS)
-    languageModal.style.display = 'none'; // Asegúrate de que esté oculto
+    // Inicialmente, el modal debería estar oculto
+    languageModal.style.display = 'none'; 
 
-    // Escuchar el evento de clic en el botón de "Language"
+    // Mostrar el modal de idioma al hacer clic en 'Language'
     boxLanguage.addEventListener('click', function(event) {
-        event.preventDefault(); // Evitar la navegación instantánea
-        languageModal.style.display = 'flex'; // Mostrar el modal
+        event.preventDefault();
+        languageModal.style.display = 'flex'; 
     });
 
-    // Escuchar el evento de clic en el botón de "Close"
+    // Ocultar el modal al hacer clic en 'Close'
     closeModal.addEventListener('click', function() {
-        languageModal.style.display = 'none'; // Ocultar el modal
+        languageModal.style.display = 'none';
     });
 
-    // Escuchar el evento de clic en el botón de "Start"
+    // Activar la animación y redirigir al hacer clic en 'Start'
     startButton.addEventListener('click', function(event) {
-        event.preventDefault(); // Evitar la navegación instantánea
-        document.body.classList.add('slide-out');
+        event.preventDefault(); // Evitar navegación instantánea
 
+        // Añadir la clase para activar la animación de salida
+        document.body.classList.add('body-slide-out');
+
+        // Esperar a que termine la animación (400ms) antes de redirigir
         setTimeout(function() {
-            window.location.href = "./src/viewsEnglish/home.html"; // Redirigir tras la animación
-        }, 400); // Coincide con la duración de la animación
+            window.location.href = "./src/viewsEnglish/home.html"; // Cambia a la nueva página
+        }, 1000); // Coincide con la duración de la animación CSS
     });
 });

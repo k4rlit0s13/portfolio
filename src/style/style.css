@@ -210,7 +210,10 @@ body {
     }
 }
 
-
+/* Clase que activa la animación de salida */
+.body-slide-out {
+    animation: slideOutLeft 1s ease-in-out; /* Ajusta la duración si lo prefieres */
+}
 
 
 

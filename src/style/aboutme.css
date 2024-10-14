@@ -66,7 +66,7 @@ body {
 
 
 /* Animación de shake para #aboutme img */
-@keyframes shake-aboutme {
+@keyframes shake-potion {
     0%, 100% {
         transform: translateX(0);
     }
@@ -81,13 +81,27 @@ body {
     }
 }
 
-/* Animación normal en el estado original */
-#hand {
-    animation: shake-aboutme 2s infinite ease-in-out; /* Mantener animación shake */
-    filter: drop-shadow(0 0 15px rgba(255, 0, 1, 0.5));
-    transition: filter 0.3s ease, transform 0.3s ease;
+/* Animación de escalado grande */
+@keyframes scale-up-large {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); } /* Tamaño de escala más grande */
+    100% { transform: scale(1.1); } /* Mantener tamaño grande */
 }
 
+#hand img {
+    animation: shake-potion 2.5s infinite ease-in-out; /* Mantener animación shake */
+    filter: drop-shadow(0 0 15px rgba(255, 1, 1, 0.5));
+}
+
+#hand img:hover {
+    animation: scale-up-large 0.5s forwards; /* Usar la animación más grande */
+    animation-play-state: running; /* Asegura que la animación se ejecute */
+    filter: drop-shadow(0 0 50px rgb(255, 1, 1));
+}
+
+#hand img{
+    cursor: none;
+}
 
 
 
