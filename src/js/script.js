@@ -1,22 +1,28 @@
-document.getElementById('boxlanguage').addEventListener('click', function () {
-    document.getElementById('language-modal').style.display = 'block';
-});
-
-document.getElementById('close-modal').addEventListener('click', function () {
-    document.getElementById('language-modal').style.display = 'none';
-});
-
 document.addEventListener("DOMContentLoaded", function() {
+    const boxLanguage = document.getElementById('boxlanguage');
+    const languageModal = document.getElementById('language-modal');
+    const closeModal = document.getElementById('close-modal');
     const startButton = document.getElementById('startButton');
+
+    // Inicialmente, el modal debería estar oculto (esto es redundante ya que ya lo tienes en CSS)
+    languageModal.style.display = 'none'; // Asegúrate de que esté oculto
+
+    // Escuchar el evento de clic en el botón de "Language"
+    boxLanguage.addEventListener('click', function(event) {
+        event.preventDefault(); // Evitar la navegación instantánea
+        languageModal.style.display = 'flex'; // Mostrar el modal
+    });
+
+    // Escuchar el evento de clic en el botón de "Close"
+    closeModal.addEventListener('click', function() {
+        languageModal.style.display = 'none'; // Ocultar el modal
+    });
 
     // Escuchar el evento de clic en el botón de "Start"
     startButton.addEventListener('click', function(event) {
         event.preventDefault(); // Evitar la navegación instantánea
-
-        // Añadir la clase para deslizar todo el contenido hacia la izquierda
         document.body.classList.add('slide-out');
 
-        // Esperar a que termine la animación antes de redirigir a la siguiente página
         setTimeout(function() {
             window.location.href = "./src/viewsEnglish/home.html"; // Redirigir tras la animación
         }, 400); // Coincide con la duración de la animación
