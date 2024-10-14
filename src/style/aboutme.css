@@ -27,7 +27,7 @@ body{
     font-size: 21.5rem;
 }
 #title p{
-    background-color: red;
+    /* background-color: red; */
     font-family: "jaro";
     color: white;
     line-height: 200px;

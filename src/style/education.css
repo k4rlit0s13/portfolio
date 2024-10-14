@@ -8,3 +8,42 @@ body{
     background-color: #2B1900;
 }
 
+
+#title{
+    /* background-color: aqua; */
+    width: 97vw;
+    height: 97vh;
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+#edu{
+    font-size: 15rem;
+}
+#cat{
+    font-size: 17rem;
+}
+#ion{
+    font-size: 17rem;
+}
+#title p{
+    /* background-color: red; */
+    font-family: "jaro";
+    color: white;
+    line-height: 230px;
+    margin: 0;
+    padding: 0px;
+}
+
+#hand{
+    width: 97vw;
+    height: 97vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
