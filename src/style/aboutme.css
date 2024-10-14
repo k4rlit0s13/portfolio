@@ -7,8 +7,8 @@ body {
     background-color: #2B1900;
     margin: 0;
     padding: 0;
-    width: 100vw;
-    height: auto;
+    width: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,39 +16,51 @@ body {
 }
 
 #title {
+    /* background-color: blue; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+#title p {
+    /* background-color: rebeccapurple; */
+    font-family: "jaro";
+    color: white;
+    opacity: 20%;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    line-height: 0.7;
+}
+
 #about {
-    font-size: 5rem;
-    /* Tamaño fijo, podrías cambiarlo a % si lo deseas más dinámico */
+    /* background-color: salmon; */
+    font-size: 10rem;
 }
 
 #me {
-    font-size: 10rem;
-    /* Tamaño fijo, pero puedes hacerlo relativo también */
+    /* background-color: yellowgreen; */
+    font-size: 20rem;
 }
 
-#title p {
-    font-family: "jaro";
-    color: white;
-    line-height: 1;
-    /* Ajuste para no generar mucho espacio entre líneas */
-    margin: 0;
-    padding: 0;
-}
 
 #hand{
-    background-color: red;
-    width: 60%;
+    /* background-color: red; */
+    width: 100vw;
+    height: 50vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    
 }
 
 #hand img {
-    background-color: aqua;
-    width: 100%;
+    /* background-color: aqua; */
+    height: 100%;
 }
 
 
@@ -64,20 +76,21 @@ body {
 
 /*mobile super peque;o*/
 @media screen and (max-width: 320px) {}
-
-/*mobile horizontal*/
+/*mobile chiquito horizontal*/
 @media screen and (max-height:450px) {}
 
-/*mobile horizontal*/
-@media screen and (min-width:500px) {
-    body {
-        background-color: blue;
+
+/*mobile vertical*/
+@media screen and (max-width:450px) {
+    #about {
+        font-size: 7rem;
     }
-    #hand{
-        background-color: red;
-        width: 50%;
+    
+    #me {
+        font-size: 15rem;
     }
 }
+
 
 /*Pc*/
 @media screen and (min-width:1040px) {}
