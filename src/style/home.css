@@ -402,6 +402,7 @@ body{
 /*Pc*/
 @media screen and (min-width:1040px) {
     body{
+        overflow: hidden;
         flex-direction: column;
         justify-content: center;
         align-items: center;
