@@ -83,7 +83,6 @@ body {
     justify-content: center;
     align-items: center;
     font-family: "jaro";
-    font-size: 3rem;
     text-decoration: none;
     gap: 1vh;
 }
@@ -109,6 +108,7 @@ body {
     /* background-color: antiquewhite; */
     margin: 0;
     color: #6D614E;
+    font-size: 3rem;
 }
 
 #boxlanguage a {
@@ -174,62 +174,64 @@ body {
 
 
 /*mobile super peque;o*/
-@media screen and (max-width: 320px){
+@media screen and (max-width: 320px) {
     body {
         display: flex;
         flex-direction: column;
         gap: 5vh;
     }
 
-    #textboxmiddle {
-        line-height: 100px;
-    }
-
 }
+
 /*mobile horizontal*/
-@media screen and (max-height:450px){
+@media screen and (max-height:450px) {
     body {
         flex-direction: row;
         justify-content: center;
         gap: 5vh;
     }
 
-    #textboxmiddle {
-        line-height: 100px;
-    }
-
     #textbox {
         padding-top: 0vh;
     }
 }
+
 /*Pc*/
-@media screen and (min-width:1040px){
+@media screen and (min-width:1040px) {
     body {
         flex-direction: column;
         justify-content: center;
-        gap: 10vh;
+        gap: 200px;
     }
+
     #boxstart a {
         border-radius: 2vw;
-        padding: 0.5vw 3vw 1vw 3vw;
-        font-size: 3rem;
+        padding: 5px 100px 10px 100px;
+        font-size: 5rem;
     }
+
+    #boxlanguage a p {
+        font-size: 5rem;
+    }
+
     #boxlanguage a {
-        font-size: 2.5rem;
+        font-size: 5rem;
     }
+
+    #textboxtop {
+        font-size: 8rem;
+    }
+
     #textboxmiddle {
-        line-height: 120px;
+        font-size: 15rem;
+        line-height: 300px;
     }
+
+    #textboxbottom {
+        font-size: 8rem;
+    }
+
     #textbox {
         padding-top: 0vh;
     }
 }
-
-
-
-
-
-
-
-
-
