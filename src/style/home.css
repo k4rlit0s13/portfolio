@@ -53,7 +53,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 50px;
     width: 100%;
 }
 
@@ -63,7 +63,6 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 20px;
 }
 
 .potion a{
@@ -74,7 +73,7 @@ body{
     align-items: center;
     width: 150px;
     padding: 10px;
-    gap: 10px;
+    gap: 40px;
     text-decoration: none;
 }
 
@@ -121,6 +120,124 @@ body{
 }
 
 
+/* Animación de shake para #aboutme img */
+@keyframes shake-aboutme {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(5px);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(3px);
+    }
+}
+
+/* Animación de shake para #project img */
+@keyframes shake-project {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(5px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    75% {
+        transform: translateY(3px);
+    }
+}
+
+/* Animación de shake para #skills img */
+@keyframes shake-skills {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(3deg);
+    }
+}
+
+/* Animación de shake para #education img */
+@keyframes shake-education {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.05);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    75% {
+        transform: scale(1.03);
+    }
+}
+
+/* Animación de escalado grande */
+@keyframes scale-up-large {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); } /* Tamaño de escala más grande */
+    100% { transform: scale(1.2); } /* Mantener tamaño grande */
+}
+
+/* Animación normal en el estado original */
+#aboutme img {
+    animation: shake-aboutme 2s infinite ease-in-out; /* Mantener animación shake */
+    filter: drop-shadow(0 0 15px rgba(255, 0, 1, 0.5));
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover para la imagen con la animación de escalado */
+#aboutme img:hover {
+    animation: scale-up-large 0.5s forwards; /* Usar la animación más grande */
+    animation-play-state: running; /* Asegura que la animación se ejecute */
+    filter: drop-shadow(0 0 50px rgba(255, 0, 1, 1)); /* Aura roja intensa al hover */
+}
+
+/* Repite esto para las otras imágenes */
+#project img {
+    animation: shake-project 3s infinite ease-in-out; /* Mantener animación shake */
+    filter: drop-shadow(0 0 15px rgba(251, 255, 1, 0.5));
+}
+
+#project img:hover {
+    animation: scale-up-large 0.5s forwards; /* Usar la animación más grande */
+    animation-play-state: running; /* Asegura que la animación se ejecute */
+    filter: drop-shadow(0 0 50px rgba(251, 255, 1, 1));
+}
+
+#skills img {
+    animation: shake-skills 2.5s infinite ease-in-out; /* Mantener animación shake */
+    filter: drop-shadow(0 0 15px rgba(1, 183, 255, 0.5));
+}
+
+#skills img:hover {
+    animation: scale-up-large 0.5s forwards; /* Usar la animación más grande */
+    animation-play-state: running; /* Asegura que la animación se ejecute */
+    filter: drop-shadow(0 0 50px rgba(1, 183, 255, 1));
+}
+
+#education img {
+    animation: shake-education 3s infinite ease-in-out; /* Mantener animación shake */
+    filter: drop-shadow(0 0 15px rgba(31, 255, 1, 0.5));
+}
+
+#education img:hover {
+    animation: scale-up-large 0.5s forwards; /* Usar la animación más grande */
+    animation-play-state: running; /* Asegura que la animación se ejecute */
+    filter: drop-shadow(0 0 50px rgba(31, 255, 1, 1));
+}
 
 
 
@@ -159,7 +276,7 @@ body{
     body{
         overflow: auto;
         padding-top: 20px;
-        gap: 0px;
+        gap: 30px;
         align-items: center;
         justify-content: center;
     }
@@ -171,7 +288,7 @@ body{
     
     .potion{
         width: 50vw;
-        gap: 0vw;
+        gap: 0px;
         justify-content: space-around;
     }
     
@@ -179,7 +296,7 @@ body{
         align-items: center;
         width: 100px;
         padding: 0px;
-        gap: 0px;
+        gap: 60px;
     }
 
     #leftHand{
