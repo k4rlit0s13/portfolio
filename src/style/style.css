@@ -12,8 +12,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     height: 95vh;
+    gap: 80px;
 }
 
 #textbox {
@@ -27,7 +28,7 @@ body {
     padding: 5px;
     display: flex;
     flex-direction: column;
-    gap: 10vh;
+    gap: 10px;
 }
 
 #textboxtop {
@@ -41,7 +42,7 @@ body {
     /* background-color: chocolate; */
     font-family: "jaro";
     font-size: 5rem;
-    line-height: 13vh;
+    line-height: 100px;
 }
 
 #textboxbottom {
@@ -63,10 +64,10 @@ body {
     /* background-color: aqua; */
     border: 10px solid #6D614E;
     color: #6D614E;
-    border-radius: 3vw;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
-    padding: 2vw 10vw 3vw 10vw;
+    padding: 5px 70px 5px 70px;
     font-family: "jaro";
     font-size: 3rem;
     text-decoration: none;
@@ -95,6 +96,7 @@ body {
     color: white;
     transform: scale(1.1);
     border: 10px solid #ffffff;
+    box-shadow: 20px 20px 20px #2b19004b;
 }
 
 
@@ -116,7 +118,7 @@ body {
 #boxlanguage a:hover {
     color: white;
     transform: scale(1.1);
-    text-shadow: 20px 20px 30px #38250b42;
+    text-shadow: 20px 20px 30px #38250b1f;
 }
 
 .modal {
@@ -165,71 +167,62 @@ body {
 
 
 
-@media (min-width: 426px) and (max-height: 863px) {
 
+
+
+
+
+
+/*mobile super peque;o*/
+@media screen and (max-width: 320px){
     body {
-        flex-direction: row;
-        gap: 6vw;
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
     }
 
     #textboxmiddle {
-        line-height: 30vh;
+        line-height: 100px;
+    }
+
+}
+/*mobile horizontal*/
+@media screen and (max-height:450px){
+    body {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5vh;
+    }
+
+    #textboxmiddle {
+        line-height: 100px;
     }
 
     #textbox {
         padding-top: 0vh;
     }
 }
-
-
-
-
-
-
-
-
-
-@media (min-width: 768px) and (max-height: 863px) {
-
+/*Pc*/
+@media screen and (min-width:1040px){
     body {
         flex-direction: column;
         justify-content: center;
         gap: 10vh;
     }
-
-    #footer {
-        gap: 7vh;
+    #boxstart a {
+        border-radius: 2vw;
+        padding: 0.5vw 3vw 1vw 3vw;
+        font-size: 3rem;
     }
-
+    #boxlanguage a {
+        font-size: 2.5rem;
+    }
+    #textboxmiddle {
+        line-height: 120px;
+    }
     #textbox {
         padding-top: 0vh;
     }
-
-    #textboxtop {
-        font-size: 3rem;
-    }
-
-    #textboxmiddle {
-        font-size: 5rem;
-        line-height: 15vh;
-    }
-
-    #textboxbottom {
-        font-size: 4rem;
-    }
-
-    #boxstart a {
-        font-size: 3rem;
-    }
-
-    #boxlanguage {
-        padding: 0px;
-    }
-
-    #boxlanguage a {
-        font-size: 3rem;
-    }
-
 }
 
 
@@ -240,53 +233,3 @@ body {
 
 
 
-@media (min-width: 1440px) {
-
-    body {
-        flex-direction: column;
-        justify-content: center;
-        gap: 20vh;
-    }
-
-    #footer {
-        width: 97vw;
-        padding: 0px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        gap: 5vh;
-    }
-
-    #textbox {
-        padding-top: 0vh;
-    }
-
-    #textboxtop {
-        font-size: 5rem;
-    }
-
-    #textboxmiddle {
-        font-size: 10rem;
-        line-height: 20vh;
-    }
-
-    #textboxbottom {
-        font-size: 5rem;
-    }
-
-    #boxstart a {
-        padding: 0.5vw 4vw 0.9vw 4vw;
-        font-size: 5rem;
-        border-radius: 1vw;
-    }
-
-    #boxlanguage {
-        padding: 0px;
-    }
-
-    #boxlanguage a {
-        font-size: 4rem;
-    }
-
-}
