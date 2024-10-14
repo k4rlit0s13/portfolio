@@ -28,7 +28,6 @@ body {
     font-family: "jaro";
     color: white;
     opacity: 20%;
-    line-height: 1;
     margin: 0;
     padding: 0;
     line-height: 0.7;
@@ -66,6 +65,29 @@ body {
 
 
 
+/* Animación de shake para #aboutme img */
+@keyframes shake-aboutme {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(5px);
+    }
+    50% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(3px);
+    }
+}
+
+/* Animación normal en el estado original */
+#hand {
+    animation: shake-aboutme 2s infinite ease-in-out; /* Mantener animación shake */
+    filter: drop-shadow(0 0 15px rgba(255, 0, 1, 0.5));
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
 
 
 
@@ -75,7 +97,24 @@ body {
 
 
 /*mobile super peque;o vertical*/
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 320px) {
+    #hand {
+        /* background-color: red; */
+        width: auto;
+        height: auto;
+    }
+    
+    #hand img {
+        height: 50vh;
+    }
+}
+
+/*mobile super peque;o vertical*/
+@media screen and (min-width: 321px) and (max-height: 850px){
+    #hand img {
+        height: 50vh;
+    }
+}
 
 /*mobile mediano y chikito horizontal*/
 @media screen and (max-height:429px) {
@@ -93,7 +132,7 @@ body {
     }
 
     #hand {
-        height: 70vh;
+        height: 60vh;
     }
 
 
