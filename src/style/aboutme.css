@@ -3,43 +3,81 @@
     src: url(../storage/fonts/Jaro_24pt-Regular.ttf);
 }
 
-body{
+body {
     background-color: #2B1900;
-}
-
-
-#title{
-    /* background-color: aqua; */
-    width: 97vw;
-    height: 97vh;
-    position: absolute;
-    z-index: -1;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
 
+#title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-#about{
+
+#about {
+    font-size: 5rem;
+    /* Tamaño fijo, podrías cambiarlo a % si lo deseas más dinámico */
+}
+
+#me {
     font-size: 10rem;
+    /* Tamaño fijo, pero puedes hacerlo relativo también */
 }
-#me{
-    font-size: 21.5rem;
-}
-#title p{
-    /* background-color: red; */
+
+#title p {
     font-family: "jaro";
     color: white;
-    line-height: 200px;
+    line-height: 1;
+    /* Ajuste para no generar mucho espacio entre líneas */
     margin: 0;
-    padding: 0px;
+    padding: 0;
 }
 
 #hand{
-    width: 97vw;
-    height: 97vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background-color: red;
+    width: 60%;
 }
+
+#hand img {
+    background-color: aqua;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+
+/*mobile super peque;o*/
+@media screen and (max-width: 320px) {}
+
+/*mobile horizontal*/
+@media screen and (max-height:450px) {}
+
+/*mobile horizontal*/
+@media screen and (min-width:500px) {
+    body {
+        background-color: blue;
+    }
+    #hand{
+        background-color: red;
+        width: 50%;
+    }
+}
+
+/*Pc*/
+@media screen and (min-width:1040px) {}
