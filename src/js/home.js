@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
     cursorElement.src = '../storage/img/rightHand.svg'; // Imagen inicial
     cursorElement.style.position = 'absolute';
     cursorElement.style.pointerEvents = 'none';
-    cursorElement.style.width = '400px'; // Ajusta el tamaño de la imagen
-    cursorElement.style.height = '400px'; // Ajusta el tamaño de la imagen
+    cursorElement.style.width = '350px'; // Ajusta el tamaño de la imagen
+    cursorElement.style.height = '350px'; // Ajusta el tamaño de la imagen
     cursorElement.style.transform = 'translate(-120px, -160px)'; // Ajusta la posición para centrar el clic
     document.body.appendChild(cursorElement);
 
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('mousedown', () => {
         // Cambiar a la imagen de "presionado"
-        cursorElement.src = '../storage/img/clickHand.svg';
+        cursorElement.src = '../storage/img/rightHandClose.svg';    
     });
 
     document.addEventListener('mouseup', () => {
