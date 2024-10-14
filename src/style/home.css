@@ -282,7 +282,33 @@ body{
 /* Aplicar la animación a la mano izquierda */
 #leftHand {
     animation: wrist-movement 2s infinite ease-in-out; /* Cambia 2s a la duración que desees */
-    filter: drop-shadow(0 0 10px rgba(243, 243, 239, 0.7)); /* Efecto de sombra suave */
+    filter: drop-shadow(30px 30px 50px rgba(255, 255, 121, 0.7)); /* Efecto de sombra suave */
+}
+
+
+/* Animación de movimiento de muñeca (invertido) */
+@keyframes wrist-movement-right {
+    0% {
+        transform: rotate(0deg) translateY(0); /* Posición inicial */
+    }
+    25% {
+        transform: rotate(10deg) translateY(-20px); /* Movimiento hacia arriba y rotación (invertido) */
+    }
+    50% {
+        transform: rotate(0deg) translateY(0); /* Regresa a la posición inicial */
+    }
+    75% {
+        transform: rotate(-10deg) translateY(20px); /* Movimiento hacia abajo y rotación (invertido) */
+    }
+    100% {
+        transform: rotate(0deg) translateY(0); /* Regresa a la posición inicial */
+    }
+}
+
+/* Aplicar la animación a la mano derecha */
+#rightHand {
+    animation: wrist-movement-right 2s infinite ease-in-out; /* Cambia 2s a la duración que desees */
+    filter: drop-shadow(-20px 30px 50px rgba(255, 255, 121, 0.7)); /* Efecto de sombra suave */
 }
 
 
