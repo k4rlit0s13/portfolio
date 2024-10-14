@@ -45,7 +45,7 @@ body {
 }
 
 
-#hand{
+#hand {
     /* background-color: red; */
     width: 100vw;
     height: 50vh;
@@ -55,7 +55,7 @@ body {
     justify-content: center;
 
     position: absolute;
-    
+
 }
 
 #hand img {
@@ -74,23 +74,77 @@ body {
 
 
 
-/*mobile super peque;o*/
+/*mobile super peque;o vertical*/
 @media screen and (max-width: 320px) {}
-/*mobile chiquito horizontal*/
-@media screen and (max-height:450px) {}
 
+/*mobile mediano y chikito horizontal*/
+@media screen and (max-height:429px) {
+
+    #title {
+        flex-direction: row;
+    }
+
+    #about {
+        font-size: 7rem;
+    }
+
+    #me {
+        font-size: 7rem;
+    }
+
+    #hand {
+        height: 70vh;
+    }
+
+
+}
+
+/*tablet*/
+@media screen and (min-height:430px) and (max-height:500px){
+
+    #title {
+        flex-direction: row;
+    }
+
+    #about {
+        font-size: 11rem;
+    }
+
+    #me {
+        font-size: 11rem;
+    }
+
+    #hand {
+        height: 70vh;
+    }
+}
 
 /*mobile vertical*/
 @media screen and (max-width:450px) {
     #about {
         font-size: 7rem;
     }
-    
+
     #me {
         font-size: 15rem;
     }
 }
 
-
 /*Pc*/
-@media screen and (min-width:1040px) {}
+@media screen and (min-width:1400px) {
+    #title {
+        flex-direction: row;
+    }
+
+    #about {
+        font-size: 20rem;
+    }
+
+    #me {
+        font-size: 20rem;
+    }
+
+    #hand {
+        height: 50vh;
+    }
+}
