@@ -210,11 +210,6 @@ body {
     }
 }
 
-/* Clase para aplicar la animación al cuerpo */
-.slide-out {
-    animation: slideOutLeft 0.5s forwards;
-    /* Se moverá hacia la izquierda en 0.5 segundos */
-}
 
 
 

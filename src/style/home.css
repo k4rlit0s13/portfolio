@@ -5,6 +5,9 @@
 
 
 body{
+
+    cursor: none; /* Oculta el cursor predeterminado */
+
     overflow-x: hidden;
     padding: 0;
     margin: 0;
@@ -19,7 +22,6 @@ body{
     height: auto;
     /* animation: slideInRight 0.5s ease-out forwards; */
 }
-
 
 @keyframes slideInRight {
     0% {
@@ -241,6 +243,55 @@ body{
 
 
 
+/* Animación de shake suave */
+@keyframes gentle-shake {
+    0% { transform: translate(0); }
+    25% { transform: translate(2px, 2px); }
+    50% { transform: translate(-2px, -2px); }
+    75% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* Aplicar la animación a la imagen */
+#facemage {
+    animation: gentle-shake 3s infinite ease-in-out; /* Cambia 3s a la duración que desees */
+    filter: drop-shadow(0 0 10px rgba(29, 1, 1, 0.7)); /* Efecto de sombra suave */
+}
+
+
+
+/* Animación de movimiento de muñeca */
+@keyframes wrist-movement {
+    0% {
+        transform: rotate(0deg) translateY(0); /* Posición inicial */
+    }
+    25% {
+        transform: rotate(-10deg) translateY(-20px); /* Movimiento hacia arriba y rotación */
+    }
+    50% {
+        transform: rotate(0deg) translateY(0); /* Regresa a la posición inicial */
+    }
+    75% {
+        transform: rotate(10deg) translateY(20px); /* Movimiento hacia abajo y rotación */
+    }
+    100% {
+        transform: rotate(0deg) translateY(0); /* Regresa a la posición inicial */
+    }
+}
+
+/* Aplicar la animación a la mano izquierda */
+#leftHand {
+    animation: wrist-movement 2s infinite ease-in-out; /* Cambia 2s a la duración que desees */
+    filter: drop-shadow(0 0 10px rgba(243, 243, 239, 0.7)); /* Efecto de sombra suave */
+}
+
+
+
+#aboutme, #project, #skills, #education, #back a {
+    cursor: none; 
+}
+
+
 
 
 
@@ -269,6 +320,9 @@ body{
         display: none;
     }
 
+    #aboutme, #project, #skills, #education, #back a {
+        cursor: default; 
+    }
 }
 
 /*mobile horizontal*/
@@ -304,6 +358,18 @@ body{
     }
     #rightHand{
         display: block;
+    }
+
+
+    
+}
+
+@media screen and (max-width:1039px) {
+    body{
+        cursor: default;
+    }
+    #aboutme, #project, #skills, #education, #back a {
+        cursor: default; 
     }
 }
 
@@ -373,5 +439,6 @@ body{
     }
     #rightHand{
         display: block;
+        opacity: 0;
     }
 }
