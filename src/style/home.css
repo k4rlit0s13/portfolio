@@ -1,11 +1,22 @@
+@font-face {
+    font-family: "jaro";
+    src: url(../storage/fonts/Jaro_24pt-Regular.ttf);
+}
+
+
 body{
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
     background-color: #2B1900;
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 20px;
     height: 97vh;
-    animation: slideInRight 0.5s ease-out forwards;
+    /* animation: slideInRight 0.5s ease-out forwards; */
 }
 
 
@@ -17,5 +28,205 @@ body{
     100% {
         transform: translateX(0); /* Termina en su posición original */
         opacity: 1; /* Termina completamente visible */
+    }
+}
+
+
+#mage{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+#mage img{
+    width: 100%;
+}
+
+
+#potions{
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.potion{
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.potion a{
+    /* background-color: salmon; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    padding: 10px;
+    gap: 10px;
+    text-decoration: none;
+}
+
+
+.potion a h2{
+    font-family: "jaro";
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+
+
+#back{
+    text-decoration: none;
+}
+
+#leftHand{
+    display: none;
+}
+#rightHand{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+
+/*mobile super peque;o*/
+@media screen and (max-width: 320px) {
+    body{
+        padding: 60px;
+        gap: 0px;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+    }
+    .potion a{
+        width: 100px;
+    }
+ 
+    #leftHand{
+        display: none;
+    }
+    #rightHand{
+        display: none;
+    }
+
+}
+
+/*mobile horizontal*/
+@media screen and (max-height:450px) {
+    body{
+        overflow: auto;
+        padding: 60px;
+        gap: 0px;
+        height: 90vh;
+        align-items: center;
+        justify-content: center;
+    }
+    #potions{
+        flex-direction: row;
+        gap: 0px;
+        width: 100vw;
+    }
+    
+    .potion{
+        width: 50vw;
+        gap: 0vw;
+        justify-content: space-around;
+    }
+    
+    .potion a{
+        align-items: center;
+        width: 100px;
+        padding: 0px;
+        gap: 0px;
+    }
+    
+}
+
+/*Pc*/
+@media screen and (min-width:1040px) {
+    body{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        height: 97vh;
+    }
+    #mage{
+        /* background-color: red; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #mage img{
+        width: 100%;
+    }
+    
+    
+    #potions{
+        /* background-color: blue; */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+    
+    .potion{
+        /* background-color: aqua; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .potion a{
+        /* background-color: salmon; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 300px;
+        padding: 10px;
+        gap: 30px;
+        text-decoration: none;
+    }
+    
+    .potion a h2{
+        font-family: "jaro";
+        color: white;
+        padding: 0;
+        margin: 0;
+    }
+    
+    #leftHand{
+        display: block;
+    }
+    #rightHand{
+        display: block;
     }
 }
