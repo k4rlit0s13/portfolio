@@ -1,4 +1,3 @@
-// home.js
 document.addEventListener('DOMContentLoaded', () => {
     const cursorElement = document.createElement('img');
     cursorElement.src = '../storage/img/rightHand.svg'; // Imagen inicial
