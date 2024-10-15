@@ -418,13 +418,13 @@ body {
 /* Animación de salida */
 @keyframes slideOutLeft {
     0% {
-        transform: translateX(0);
+        transform: translateY(0);
         background-color: #2B1900;
     }
 
     100% {
-        transform: translateX(-100%);
-        background-color: #6D614E;
+        transform: translateY(-100%);
+        background-color: #A69273;
     }
 }
 
