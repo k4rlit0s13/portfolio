@@ -3,43 +3,154 @@
     src: url(../storage/fonts/Jaro_24pt-Regular.ttf);
 }
 
-body{
+body {
+    overflow: hidden;
     background-color: #2B1900;
-}
-
-#title{
-    /* background-color: aqua; */
-    width: 97vw;
-    height: 97vh;
-    position: absolute;
-    z-index: -1;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
 
+#title {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
-#skills{
-    font-size: 12rem;
-}
-#title p{
-    /* background-color: red; */
+
+#title p {
+    /* background-color: rebeccapurple; */
     font-family: "jaro";
     color: white;
-    line-height: 200px;
+    opacity: 20%;
     margin: 0;
-    padding: 0px;
+    padding: 0;
+    line-height: 0.7;
 }
 
-#hand{
-    overflow-x: hidden;
-    width: 90vw;
-    height: 90vh;
+#skills {
+    /* background-color: salmon; */
+    font-size: 30vw;
+}
+
+
+#hand {
+    /* background-color: red; */
+    max-width: 40vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    left: 30px;
+    position: absolute;
 }
 
+#hand img {
+    /* background-color: aqua; */
+    width: 100%;
+    cursor: none;
+}
+
+
+/* Animación de shake para #aboutme img */
+@keyframes shake-potion {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    75% {
+        transform: translateY(3px);
+    }
+}
+
+/* Animación de escalado grande */
+@keyframes scale-up-large {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    /* Tamaño de escala más grande */
+    100% {
+        transform: scale(1.1);
+    }
+
+    /* Mantener tamaño grande */
+}
+
+#hand img {
+    animation: shake-potion 2.5s infinite ease-in-out;
+    /* Mantener animación shake */
+    filter: drop-shadow(0 0 15px rgba(251, 255, 1, 0.5));
+}
+
+#hand img:hover {
+    animation: scale-up-large 0.5s forwards;
+    /* Usar la animación más grande */
+    animation-play-state: running;
+    /* Asegura que la animación se ejecute */
+    filter: drop-shadow(0 0 50px rgba(251, 255, 1, 1));
+}
+
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+@media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    #pro,
+    #ject {
+        font-size: 50vw;
+    }
+
+    #title {
+        flex-direction: column;
+    }
+
+    #hand {
+        max-width: 20vh;
+    }
+
+    #hand img {
+        cursor: default;
+    }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    #pro,
+    #ject {
+        font-size: 20vw;
+    }
+
+    #title {
+        flex-direction: row;
+    }
+}

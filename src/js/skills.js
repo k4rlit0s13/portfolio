@@ -1,10 +1,11 @@
+// home.js
 document.addEventListener('DOMContentLoaded', () => {
     const cursorElement = document.createElement('img');
-    cursorElement.src = '../storage/img/rightHand.svg'; // Imagen inicial
+    cursorElement.src = '../storage/img/leftHand.svg'; // Imagen inicial
     cursorElement.style.position = 'absolute';
     cursorElement.style.pointerEvents = 'none';
-    cursorElement.style.width = '300px'; // Ajusta el tamaño de la imagen
-    cursorElement.style.height = '300px'; // Ajusta el tamaño de la imagen
+    cursorElement.style.width = '350px'; // Ajusta el tamaño de la imagen
+    cursorElement.style.height = '350px'; // Ajusta el tamaño de la imagen
     cursorElement.style.transform = 'translate(-120px, -160px)'; // Ajusta la posición para centrar el clic
     document.body.appendChild(cursorElement);
 
@@ -45,14 +46,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('mousedown', () => {
         // Cambiar a la imagen de "presionado"
-        cursorElement.src = '../storage/img/rightHandClose.svg';    
+        cursorElement.src = '../storage/img/leftHandClose.svg';    
     });
 
     document.addEventListener('mouseup', () => {
         // Restablecer la imagen después de un breve período
         clearTimeout(timeoutId); // Limpiar cualquier temporizador anterior
         timeoutId = setTimeout(() => {
-            cursorElement.src = '../storage/img/rightHand.svg'; // Volver a la imagen original después de 200 ms
-        }, 150);
+            cursorElement.src = '../storage/img/leftHand.svg'; // Volver a la imagen original después de 200 ms
+        }, 100);
     });
 });

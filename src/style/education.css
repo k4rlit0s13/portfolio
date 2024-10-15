@@ -134,13 +134,20 @@ body {
     #title {
         flex-direction: column; /* Cambiar la dirección a vertical */
     }
+    #hand {
+        max-width: 40vh;
+    }
+
+    #hand img {
+        cursor: default;
+    }
 
 }
 
 
 @media (min-width: 601px) and (max-width: 1024px) {
     body {
-        flex-direction: row;
+        overflow-x: hidden;
     }
 
     #edu, #cat, #ion {
