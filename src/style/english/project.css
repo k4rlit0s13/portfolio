@@ -50,6 +50,8 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
+    flex-direction: column;
+    gap: 5vw;
 }
 
 #hand img {
@@ -58,6 +60,27 @@ body {
     cursor: none;
 }
 
+#backbutton a {
+    background-color: #2B1900;
+    border: 10px solid #160d01;
+    color: #160d01;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 60px 5px 60px;
+    font-family: "jaro";
+    font-size: 3rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: none;
+}
+
+#backbutton a:hover {
+    color: white;
+    transform: scale(1.1);
+    border: 10px solid #ffffff;
+    box-shadow: 20px 20px 20px #160d004b;
+}
 
 /* Animación de shake para #aboutme img */
 @keyframes shake-potion {
