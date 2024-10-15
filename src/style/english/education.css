@@ -5,7 +5,7 @@
 
 body {
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
     background-color: #2B1900;
     margin: 0;
     padding: 0;
@@ -136,22 +136,58 @@ body {
 
 
 
+@keyframes slideInRight {
+    0% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#hand {
+    animation: slideInRight 0.6s ease-out forwards;
+}
+
+
 /*-------------------------------------------------------------------------------------------*/
 
 
 @media (max-width: 600px) {
-    body {
-        overflow-x: hidden;
-        overflow-y: auto;
+
+
+    @keyframes bodyover {
+        0% {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+        100% {
+            overflow-y: hidden;
+            overflow-x: hidden;        
+        }
     }
 
-    #edu, #cat, #ion {
-        font-size: 60vw; /* Reducir el tamaño del texto */
+    body {
+        animation: bodyover 0.6s ease-out forwards;
+    }
+
+
+    #edu,
+    #cat,
+    #ion {
+        font-size: 60vw;
+        /* Reducir el tamaño del texto */
     }
 
     #title {
-        flex-direction: column; /* Cambiar la dirección a vertical */
+        flex-direction: column;
+        /* Cambiar la dirección a vertical */
     }
+
     #hand {
         max-width: 40vh;
     }
@@ -160,22 +196,52 @@ body {
         cursor: default;
     }
 
+    @keyframes slideInRight {
+        0% {
+            transform: translateY(200%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    #hand {
+        animation: slideInRight 0.6s ease-out forwards;
+    }
+
 }
 
 
 @media (min-width: 601px) and (max-width: 1024px) {
-    body {
-        overflow-x: hidden;
-        overflow-y: auto;
+    @keyframes bodyover {
+        0% {
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+        100% {
+            overflow-y: hidden;
+            overflow-x: hidden;        
+        }
     }
 
-    #edu, #cat, #ion {
-        font-size: 20vw; /* Ajustar el tamaño del texto */
+    body {
+        animation: bodyover 0.6s ease-out forwards;
+    }
+
+    #edu,
+    #cat,
+    #ion {
+        font-size: 20vw;
+        /* Ajustar el tamaño del texto */
     }
 
     #title {
-        flex-direction: row; /* Mantener la dirección horizontal */
+        flex-direction: row;
+        /* Mantener la dirección horizontal */
     }
 
 }
-
