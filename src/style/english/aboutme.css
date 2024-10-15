@@ -1,6 +1,6 @@
 @font-face {
     font-family: "jaro";
-    src: url(../storage/fonts/Jaro_24pt-Regular.ttf);
+    src: url(../../storage/fonts/Jaro_24pt-Regular.ttf);
 }
 
 body {
@@ -14,6 +14,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    cursor: none;
 }
 
 #title {
@@ -34,11 +35,14 @@ body {
     line-height: 0.7;
 }
 
-#skills {
+#about {
     /* background-color: salmon; */
-    font-size: 30vw;
+    font-size: 20vw;
 }
-
+#me {
+    /* background-color: salmon; */
+    font-size: 20vw;
+}
 
 #hand {
     /* background-color: red; */
@@ -58,54 +62,40 @@ body {
 
 /* Animación de shake para #aboutme img */
 @keyframes shake-potion {
-    0%,
-    100% {
-        transform: translateY(0);
+    0%, 100% {
+        transform: translateX(0);
     }
-
     25% {
-        transform: translateY(10px);
+        transform: translateX(5px);
     }
-
     50% {
-        transform: translateY(-10px);
+        transform: translateX(-5px);
     }
-
     75% {
-        transform: translateY(3px);
+        transform: translateX(3px);
     }
 }
 
 /* Animación de escalado grande */
 @keyframes scale-up-large {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    /* Tamaño de escala más grande */
-    100% {
-        transform: scale(1.1);
-    }
-
-    /* Mantener tamaño grande */
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); } /* Tamaño de escala más grande */
+    100% { transform: scale(1.1); } /* Mantener tamaño grande */
 }
 
 #hand img {
-    animation: shake-potion 2.5s infinite ease-in-out;
-    /* Mantener animación shake */
-    filter: drop-shadow(0 0 15px rgba(251, 255, 1, 0.5));
+    animation: shake-potion 2.5s infinite ease-in-out; /* Mantener animación shake */
+    filter: drop-shadow(0 0 15px rgba(255, 1, 1, 0.5));
 }
 
 #hand img:hover {
-    animation: scale-up-large 0.5s forwards;
-    /* Usar la animación más grande */
-    animation-play-state: running;
-    /* Asegura que la animación se ejecute */
-    filter: drop-shadow(0 0 50px rgba(251, 255, 1, 1));
+    animation: scale-up-large 0.5s forwards; /* Usar la animación más grande */
+    animation-play-state: running; /* Asegura que la animación se ejecute */
+    filter: drop-shadow(0 0 50px rgb(255, 1, 1));
+}
+
+#hand img{
+    cursor: none;
 }
 
 
@@ -120,11 +110,12 @@ body {
         overflow-y: auto;
     }
 
-    #pro,
-    #ject {
-        font-size: 50vw;
+    #about {
+        font-size: 30vw;
     }
-
+    #me {
+        font-size: 60vw;
+    }
     #title {
         flex-direction: column;
     }
@@ -144,7 +135,6 @@ body {
         overflow-x: hidden;
         overflow-y: auto;
     }
-
     #pro,
     #ject {
         font-size: 20vw;
@@ -153,4 +143,14 @@ body {
     #title {
         flex-direction: row;
     }
+
+
 }
+
+
+
+
+
+
+
+

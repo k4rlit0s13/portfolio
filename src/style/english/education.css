@@ -1,6 +1,6 @@
 @font-face {
     font-family: "jaro";
-    src: url(../storage/fonts/Jaro_24pt-Regular.ttf);
+    src: url(../../storage/fonts/Jaro_24pt-Regular.ttf);
 }
 
 body {
@@ -33,24 +33,16 @@ body {
     line-height: 0.7;
 }
 
-#edu {
-    /* background-color: salmon; */
-    font-size: 15vw;
-}
-
+#ion,
+#edu,
 #cat {
     /* background-color: yellowgreen; */
-    font-size: 15vw;
-}
-
-#ion {
-    /* background-color: yellowgreen; */
-    font-size: 15vw;
+    font-size: 20vw;
 }
 
 #hand {
     /* background-color: red; */
-    max-width: 70vh;
+    max-width: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,7 +120,7 @@ body {
     }
 
     #edu, #cat, #ion {
-        font-size: 50vw; /* Reducir el tamaño del texto */
+        font-size: 60vw; /* Reducir el tamaño del texto */
     }
 
     #title {

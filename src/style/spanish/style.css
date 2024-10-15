@@ -1,0 +1,285 @@
+@font-face {
+    font-family: "jaro";
+    src: url(../../storage/fonts/Jaro_24pt-Regular.ttf);
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #A69273;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+    gap: 80px;
+}
+
+#textbox {
+    /* background-color: red; */
+    color: white;
+    padding-top: 10vh;
+}
+
+#footer {
+    /* background-color: blue; */
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#textboxtop {
+    /* background-color: chartreuse; */
+    font-family: "jaro";
+    font-size: 2.5rem;
+    line-height: 0;
+}
+
+#textboxmiddle {
+    /* background-color: chocolate; */
+    font-family: "jaro";
+    font-size: 5rem;
+    line-height: 100px;
+}
+
+#textboxbottom {
+    /* background-color: salmon; */
+    display: flex;
+    justify-content: end;
+    font-family: "jaro";
+    font-size: 2.5rem;
+    line-height: 0;
+}
+
+#boxstart {
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: center;
+}
+
+#boxstart a {
+    /* background-color: aqua; */
+    border: 10px solid #6D614E;
+    color: #6D614E;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 70px 5px 70px;
+    font-family: "jaro";
+    font-size: 3rem;
+    text-decoration: none;
+}
+
+#boxlanguage {
+    padding: 0px;
+}
+
+#boxlanguage a {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "jaro";
+    text-decoration: none;
+    gap: 1vh;
+}
+
+#boxstart a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#boxstart a:hover {
+    color: white;
+    transform: scale(1.1);
+    border: 10px solid #ffffff;
+    box-shadow: 20px 20px 20px #2b19004b;
+}
+
+
+#boxlanguage a img {
+    /* background-color: yellowgreen; */
+    margin: 0;
+}
+
+#boxlanguage a p {
+    /* background-color: antiquewhite; */
+    margin: 0;
+    color: #6D614E;
+    font-size: 3rem;
+}
+
+#boxlanguage a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#boxlanguage a:hover {
+    color: white;
+    transform: scale(1.1);
+    text-shadow: 20px 20px 30px #38250b1f;
+}
+
+
+#windowlanguage {
+    background-color: #A69273;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 30px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.836);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal h2 {
+    /* background-color: purple; */
+    font-family: "jaro";
+    font-size: 2rem;
+    color: #685a45;
+    line-height: 0%;
+}
+
+.modal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal ul li {
+    /* background-color: orange; */
+    display: flex;
+    justify-content: center;
+}
+
+.modal ul li a {
+    border: 10px solid #6D614E;
+    color: #6D614E;
+    border-radius: 20px;
+    font-family: "jaro";
+    font-size: 1.9rem;
+    text-decoration: none;
+    padding: 5px 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.modal ul li a:hover {
+    color: #2B1900;
+    transform: scale(1.1);
+    border: 10px solid #2B1900;
+    box-shadow: 20px 20px 20px #2b19004b;
+}
+
+.modal button {
+    background-color: #6D614E;
+    color: #2B1900;
+    padding: 10px 35px;
+    font-family: "jaro";
+    font-size: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px #2b19004b;
+}
+
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        background-color: #6D614E;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        background-color: #2B1900;
+    }
+}
+
+/* Clase que activa la animación de salida */
+.body-slide-out {
+    animation: slideOutLeft 0.5s forwards; /* Ajusta la duración si lo prefieres */
+}
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+
+/*mobile super peque;o*/
+@media screen and (max-width: 320px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        gap: 5vh;
+    }
+
+}
+
+/*mobile horizontal*/
+@media screen and (max-height:450px) {
+    body {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5vh;
+    }
+
+    #textbox {
+        padding-top: 0vh;
+    }
+}
+
+/*Pc*/
+@media screen and (min-width:1040px) {
+    body {
+        flex-direction: column;
+        justify-content: center;
+        gap: 200px;
+    }
+
+    #boxstart a {
+        border-radius: 2vw;
+        padding: 5px 100px 10px 100px;
+        font-size: 5rem;
+    }
+
+    #boxlanguage a p {
+        font-size: 5rem;
+    }
+
+    #boxlanguage a {
+        font-size: 5rem;
+    }
+
+    #textboxtop {
+        font-size: 8rem;
+    }
+
+    #textboxmiddle {
+        font-size: 15rem;
+        line-height: 300px;
+    }
+
+    #textboxbottom {
+        font-size: 8rem;
+    }
+
+    #textbox {
+        padding-top: 0vh;
+    }
+}

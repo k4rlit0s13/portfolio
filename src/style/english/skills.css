@@ -1,9 +1,10 @@
 @font-face {
     font-family: "jaro";
-    src: url(../storage/fonts/Jaro_24pt-Regular.ttf);
+    src: url(../../storage/fonts/Jaro_24pt-Regular.ttf);
 }
 
 body {
+    overflow: hidden;
     background-color: #2B1900;
     margin: 0;
     padding: 0;
@@ -33,19 +34,15 @@ body {
     line-height: 0.7;
 }
 
-#pro {
+#skills {
     /* background-color: salmon; */
-    font-size: 20vw;
+    font-size: 30vw;
 }
 
-#ject {
-    /* background-color: yellowgreen; */
-    font-size: 20vw;
-}
 
 #hand {
     /* background-color: red; */
-    max-width: 70vh;
+    max-width: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,19 +60,19 @@ body {
 @keyframes shake-potion {
     0%,
     100% {
-        transform: translateY(0);
+        transform: rotate(0);
     }
 
     25% {
-        transform: translateY(10px);
+        transform: rotate(5deg);
     }
 
     50% {
-        transform: translateY(-10px);
+        transform: rotate(-5deg);
     }
 
     75% {
-        transform: translateY(3px);
+        transform: rotate(3deg);
     }
 }
 
@@ -100,7 +97,7 @@ body {
 #hand img {
     animation: shake-potion 2.5s infinite ease-in-out;
     /* Mantener animación shake */
-    filter: drop-shadow(0 0 15px rgba(251, 255, 1, 0.5));
+    filter: drop-shadow(0 0 15px rgba(1, 183, 255, 0.5));
 }
 
 #hand img:hover {
@@ -108,7 +105,7 @@ body {
     /* Usar la animación más grande */
     animation-play-state: running;
     /* Asegura que la animación se ejecute */
-    filter: drop-shadow(0 0 50px rgba(251, 255, 1, 1));
+    filter: drop-shadow(0 0 50px rgba(1, 183, 255, 1));
 }
 
 
@@ -126,13 +123,12 @@ body {
     #pro,
     #ject {
         font-size: 50vw;
-        /* Reducir el tamaño del texto */
     }
 
     #title {
         flex-direction: column;
-        /* Cambiar la dirección a vertical */
     }
+
     #hand {
         max-width: 20vh;
     }
@@ -140,7 +136,6 @@ body {
     #hand img {
         cursor: default;
     }
-
 }
 
 
@@ -153,14 +148,9 @@ body {
     #pro,
     #ject {
         font-size: 20vw;
-        /* Ajustar el tamaño del texto */
-    }
-    #hand {
-        max-width: 50vh;
-    }
-    #title {
-        flex-direction: row;
-        /* Mantener la dirección horizontal */
     }
 
+    #title {
+        flex-direction: row;
+    }
 }
