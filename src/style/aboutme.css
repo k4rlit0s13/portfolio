@@ -100,7 +100,7 @@ body {
 }
 
 #hand img{
-    cursor: none;
+    cursor: default;
 }
 
 
@@ -184,7 +184,11 @@ body {
 }
 
 /*Pc*/
-@media screen and (min-width:1400px) {
+@media screen and (min-width:1040px) {
+    body{
+        overflow: hidden;
+    }
+
     #title {
         flex-direction: row;
     }
@@ -199,5 +203,8 @@ body {
 
     #hand {
         height: 50vh;
+    }
+    #hand img{
+        cursor: none;
     }
 }

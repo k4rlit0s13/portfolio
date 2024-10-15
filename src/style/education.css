@@ -3,51 +3,153 @@
     src: url(../storage/fonts/Jaro_24pt-Regular.ttf);
 }
 
-
-body{
+body {
     background-color: #2B1900;
-}
-
-
-#title{
-    /* background-color: aqua; */
-    width: 97vw;
-    height: 97vh;
-    position: absolute;
-    z-index: -1;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
 
+#title {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
-#edu{
-    font-size: 15rem;
-}
-#cat{
-    font-size: 17rem;
-}
-#ion{
-    font-size: 17rem;
-}
-#title p{
-    /* background-color: red; */
+
+#title p {
+    /* background-color: rebeccapurple; */
     font-family: "jaro";
     color: white;
-    line-height: 230px;
+    opacity: 20%;
     margin: 0;
-    padding: 0px;
+    padding: 0;
+    line-height: 0.7;
 }
 
-#hand{
-    width: 98vw;
-    height: 90vh;
+#edu {
+    /* background-color: salmon; */
+    font-size: 15vw;
+}
+
+#cat {
+    /* background-color: yellowgreen; */
+    font-size: 15vw;
+}
+
+#ion {
+    /* background-color: yellowgreen; */
+    font-size: 15vw;
+}
+
+#hand {
+    /* background-color: red; */
+    max-width: 70vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: absolute;
 }
 
-#hand img{
+#hand img {
+    /* background-color: aqua; */
     width: 100%;
 }
+
+
+/* Animación de shake para #aboutme img */
+@keyframes shake-potion {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.05);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    75% {
+        transform: scale(1.03);
+    }
+}
+
+/* Animación de escalado grande */
+@keyframes scale-up-large {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    /* Tamaño de escala más grande */
+    100% {
+        transform: scale(1.1);
+    }
+
+    /* Mantener tamaño grande */
+}
+
+#hand img {
+    animation: shake-potion 2.5s infinite ease-in-out;
+    /* Mantener animación shake */
+    filter: drop-shadow(0 0 15px rgba(31, 255, 1, 0.5));
+}
+
+#hand img:hover {
+    animation: scale-up-large 0.5s forwards;
+    /* Usar la animación más grande */
+    animation-play-state: running;
+    /* Asegura que la animación se ejecute */
+    filter: drop-shadow(0 0 50px rgba(31, 255, 1, 0.5));
+}
+
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+@media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    #edu, #cat, #ion {
+        font-size: 50vw; /* Reducir el tamaño del texto */
+    }
+
+    #title {
+        flex-direction: column; /* Cambiar la dirección a vertical */
+    }
+
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        flex-direction: row;
+    }
+
+    #edu, #cat, #ion {
+        font-size: 20vw; /* Ajustar el tamaño del texto */
+    }
+
+    #title {
+        flex-direction: row; /* Mantener la dirección horizontal */
+    }
+
+}
+
