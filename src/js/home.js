@@ -56,3 +56,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 150);
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const links = document.querySelectorAll('.potion a');
+    const body = document.body;
+
+    // Función para manejar la animación y redirección
+    function handleClick(event, url) {
+        event.preventDefault(); // Evitar navegación instantánea
+
+        // Añadir la clase para activar la animación de salida
+        body.classList.add('body-slide-out');
+
+        // Esperar a que termine la animación (ajusta el tiempo según tu animación)
+        setTimeout(function() {
+            window.location.href = url; // Redirige a la nueva página
+        }, 500); // Ajusta según la duración real de tu animación
+    }
+
+    // Asignar el evento a cada enlace con su respectiva página
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+            const url = this.getAttribute('href'); // Obtener el URL del enlace
+            handleClick(event, url); // Llamar a la función con la URL correcta
+        });
+    });
+
+    // Si quieres mantener el botón de "Back" con el mismo comportamiento, podrías hacer algo similar
+    const backLink = document.querySelector('#back a');
+    if (backLink) {
+        backLink.addEventListener('click', function(event) {
+            handleClick(event, this.getAttribute('href'));
+        });
+    }
+});

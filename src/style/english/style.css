@@ -215,7 +215,20 @@ body {
     animation: slideOutLeft 0.5s forwards; /* Ajusta la duración si lo prefieres */
 }
 
+/* Animación de salida */
+@keyframes apear {
+    0% {
+        opacity: 0;
+    }
 
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: apear 1.5s forwards; 
+}
 
 /*-------------------------------------------------------------------------------------------*/
 

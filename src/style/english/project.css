@@ -4,6 +4,8 @@
 }
 
 body {
+    overflow-x: hidden;
+    overflow-y: hidden;
     background-color: #2B1900;
     margin: 0;
     padding: 0;

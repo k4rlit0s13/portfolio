@@ -415,6 +415,22 @@ body {
 
 
 
+/* Animación de salida */
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        background-color: #2B1900;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        background-color: #6D614E;
+    }
+}
+
+.body-slide-out {
+    animation: slideOutLeft 0.5s forwards; /* Ajusta la duración si lo prefieres */
+}
 
 
 /*-------------------------------------------------------------------------------------------*/
