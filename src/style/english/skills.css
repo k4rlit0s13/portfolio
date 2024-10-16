@@ -4,6 +4,7 @@
 }
 
 body {
+    user-select: none;
     overflow: hidden;
     background-color: #2B1900;
     margin: 0;
