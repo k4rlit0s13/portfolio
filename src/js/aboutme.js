@@ -83,13 +83,17 @@ document.getElementById('backbutton').addEventListener('click', function(event) 
 
 
 
-document.getElementById('hand').addEventListener('click', function(event) {
+
+
+document.getElementById('handbotton').addEventListener('click', function(event) {
     event.preventDefault(); // Evita que se cambie la página inmediatamente
     
     const particle = document.getElementById('particle');
+    const bubbles = document.querySelectorAll('#boubleparticle1, #boubleparticle2, #boubleparticle3, #boubleparticle4, #boubleparticle5');
     
     // Añadir la clase para activar la animación
     particle.classList.add('particleout');
+    bubbles.forEach(bubble => bubble.classList.add('animate-bubblesout'));
 
     // Esperar a que la animación termine y luego redirigir
     particle.addEventListener('animationend', function() {

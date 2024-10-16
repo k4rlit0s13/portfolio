@@ -40,6 +40,7 @@ body {
     /* background-color: salmon; */
     font-size: 20vw;
 }
+
 #me {
     /* background-color: salmon; */
     font-size: 20vw;
@@ -86,15 +87,20 @@ body {
 
 /* Animación de shake para #aboutme img */
 @keyframes shake-potion {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
+
     25% {
         transform: translateX(5px);
     }
+
     50% {
         transform: translateX(-5px);
     }
+
     75% {
         transform: translateX(3px);
     }
@@ -102,28 +108,42 @@ body {
 
 /* Animación de escalado grande */
 @keyframes scale-up-large {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); } /* Tamaño de escala más grande */
-    100% { transform: scale(1.1); } /* Mantener tamaño grande */
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    /* Tamaño de escala más grande */
+    100% {
+        transform: scale(1.1);
+    }
+
+    /* Mantener tamaño grande */
 }
 
 #hand img {
-    animation: shake-potion 2.5s infinite ease-in-out; /* Mantener animación shake */
+    animation: shake-potion 2.5s infinite ease-in-out;
+    /* Mantener animación shake */
     filter: drop-shadow(0 0 15px rgba(255, 1, 1, 0.5));
 }
 
 #hand img:hover {
-    animation: scale-up-large 0.5s forwards; /* Usar la animación más grande */
-    animation-play-state: running; /* Asegura que la animación se ejecute */
+    animation: scale-up-large 0.5s forwards;
+    /* Usar la animación más grande */
+    animation-play-state: running;
+    /* Asegura que la animación se ejecute */
     filter: drop-shadow(0 0 50px rgb(255, 1, 1));
 }
 
-#hand img{
+#hand img {
     cursor: none;
 }
 
 
-#particle{
+#particle {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -131,21 +151,94 @@ body {
     position: absolute;
     filter: drop-shadow(20px 20px 20px black);
     width: 100%;
-    transform: translateY(100%);
+    transform: translateY(150vh);
 }
-#particle img{
+
+#particle img {
     width: 100%;
 }
 
-#bodyparticle{
+#bodyparticle {
     background-color: #D9D9D9;
     width: 100%;
     height: 1000px;
 }
 
+#boubleparticle1 {
+    opacity: 0;
+    background-color: #D9D9D9;
+    position: absolute;
+    z-index: -1;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    right: 40%;
+    bottom: 10%;
+}
+
+#boubleparticle2 {
+    opacity: 0;
+    background-color: #D9D9D9;
+    position: absolute;
+    z-index: 1;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    right: 30%;
+    bottom: 60%;
+}
+
+#boubleparticle3 {
+    opacity: 0;
+    background-color: #D9D9D9;
+    position: absolute;
+    z-index: 1;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    left: 10%;
+    bottom: 30%;
+}
+
+
+#boubleparticle4 {
+    opacity: 0;
+    background-color: #D9D9D9;
+    position: absolute;
+    z-index: 1;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    right: 10%;
+    bottom: 30%;
+
+}
+
+#boubleparticle5 {
+    opacity: 0;
+    background-color: #D9D9D9;
+    position: absolute;
+    z-index: 1;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    left: 40%;
+    bottom: 50%;
+
+}
+
+
+
+
+
+
+
+
+
+
 @keyframes slideInBotton {
     0% {
-        transform: translateY(100vh);
+        transform: translateY(200%);
     }
 
     100% {
@@ -154,7 +247,7 @@ body {
 }
 
 #hand {
-    animation: slideInBotton 1s ease-in-out forwards;
+    animation: slideInBotton 0.9s ease-in-out forwards;
 }
 
 
@@ -181,7 +274,7 @@ body {
     }
 
     100% {
-        transform: translateY(100vh);
+        transform: translateY(200%);
     }
 }
 
@@ -196,9 +289,9 @@ body {
         transform: translateX(0);
         opacity: 1;
     }
-    
+
     100% {
-        transform: translateX(-200%);
+        transform: translateX(-300%);
         opacity: 0;
     }
 }
@@ -212,16 +305,34 @@ body {
 
 @keyframes particleout {
     0% {
-        transform: translatey(130vh);
+        transform: translatey(130%);
     }
-    
+
     100% {
-        transform: translatey(0vh);
+        transform: translatey(0);
     }
 }
 
 #particle.particleout {
-    animation: particleout 0.9s ease-in-out forwards;
+    animation: particleout 2s ease-in-out forwards;
+}
+
+
+
+@keyframes bubblesout {
+    0% {
+        opacity: 1;
+        transform: translatey(1500%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translatey(-1000%);
+    }
+}
+
+.animate-bubblesout {
+    animation: bubblesout 2s ease-in-out forwards;
 }
 
 
@@ -237,7 +348,7 @@ body {
 
         100% {
             overflow-y: hidden;
-            overflow-x: hidden;        
+            overflow-x: hidden;
         }
     }
 
@@ -248,9 +359,11 @@ body {
     #about {
         font-size: 30vw;
     }
+
     #me {
         font-size: 60vw;
     }
+
     #title {
         flex-direction: column;
     }
@@ -274,13 +387,14 @@ body {
 
         100% {
             overflow-y: hidden;
-            overflow-x: hidden;        
+            overflow-x: hidden;
         }
     }
 
     body {
         animation: bodyover 0.6s ease-out forwards;
     }
+
     #pro,
     #ject {
         font-size: 20vw;
@@ -292,11 +406,3 @@ body {
 
 
 }
-
-
-
-
-
-
-
-
