@@ -1,0 +1,45 @@
+body {
+    overflow: hidden;
+    background-color: #2B1900;
+    width: auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10vh;
+}
+
+#roll {
+    position: relative;
+    right: 50px;
+}
+
+
+#leftHand{
+    position: relative;
+    z-index: 1;
+    left: 300px;
+    bottom: 210px;
+    transform: rotate(-20deg);
+}
+#rollLeft{
+    position: relative;
+    left: 120px;
+}
+#rollCenter{
+    position: relative;
+    z-index: -1;
+    bottom: 30px;
+}
+#rollRight{
+    position: relative;
+    right: 50px;
+}
+#rightHand{
+    position: relative;
+    z-index: 1;
+    right: 240px;
+    bottom: 220px;
+    transform: rotate(20deg);
+}
