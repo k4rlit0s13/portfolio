@@ -71,7 +71,7 @@ function handleBackClick(event, url) {
         element.classList.add(element.id === 'hand' ? 'slideOutBottom' : 'slideOutLeft');
         element.addEventListener('animationend', () => {
             animationsEnded++;
-            if (animationsEnded === 2) window.location.href = url;
+            if (animationsEnded === 1) window.location.href = url;
         });
     });
 }
