@@ -122,22 +122,36 @@ body {
 }
 
 
-@keyframes slideInRight {
+@keyframes slideInBotton {
     0% {
-        transform: translateY(200%);
-        opacity: 0;
+        transform: translateY(100vh);
     }
 
     100% {
         transform: translateY(0);
-        opacity: 1;
     }
 }
 
 #hand {
-    animation: slideInRight 0.6s ease-out forwards;
+    animation: slideInBotton 1.5s ease-in-out forwards;
 }
 
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(200%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#title {
+    animation: slideInRight 0.6s ease-in-out forwards;
+}
 /*-------------------------------------------------------------------------------------------*/
 
 
