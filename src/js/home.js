@@ -60,13 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener("DOMContentLoaded", function() {
     const links = document.querySelectorAll('.potion a');
+    const backLink = document.querySelector('#back a');
     const body = document.body;
 
-    // Función para manejar la animación y redirección
-    function handleClick(event, url) {
+    // Función para manejar la animación y redirección para los enlaces de potion
+    function handlePotionClick(event, url) {
         event.preventDefault(); // Evitar navegación instantánea
 
-        // Añadir la clase para activar la animación de salida
+        // Añadir la clase para activar la animación de salida para los enlaces de potion
         body.classList.add('body-slide-out');
 
         // Esperar a que termine la animación (ajusta el tiempo según tu animación)
@@ -75,19 +76,32 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 500); // Ajusta según la duración real de tu animación
     }
 
-    // Asignar el evento a cada enlace con su respectiva página
+    // Función para manejar la animación y redirección para el botón back
+    function handleBackClick(event, url) {
+        event.preventDefault(); // Evitar navegación instantánea
+
+        // Añadir la clase para activar la animación de salida para el botón back
+        body.classList.add('body-slide-out-back');
+
+        // Esperar a que termine la animación (ajusta el tiempo según tu animación)
+        setTimeout(function() {
+            window.location.href = url; // Redirige a la nueva página
+        }, 500); // Ajusta según la duración real de tu animación
+    }
+
+    // Asignar el evento a cada enlace de potion con su respectiva página
     links.forEach(link => {
         link.addEventListener('click', function(event) {
             const url = this.getAttribute('href'); // Obtener el URL del enlace
-            handleClick(event, url); // Llamar a la función con la URL correcta
+            handlePotionClick(event, url); // Llamar a la función con la URL correcta
         });
     });
 
-    // Si quieres mantener el botón de "Back" con el mismo comportamiento, podrías hacer algo similar
-    const backLink = document.querySelector('#back a');
+    // Asignar el evento al botón back con su respectiva página
     if (backLink) {
         backLink.addEventListener('click', function(event) {
-            handleClick(event, this.getAttribute('href'));
+            const url = this.getAttribute('href'); // Obtener el URL del enlace
+            handleBackClick(event, url); // Llamar a la función con la URL correcta
         });
     }
 });

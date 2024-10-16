@@ -418,13 +418,11 @@ body {
 /* Animación de salida */
 @keyframes slideOutLeft {
     0% {
-        transform: translateY(0);
-        background-color: #2B1900;
+        transform: translateX(0);
     }
 
     100% {
-        transform: translateY(-100%);
-        background-color: #A69273;
+        transform: translateX(-100%);
     }
 }
 
@@ -432,6 +430,22 @@ body {
     animation: slideOutLeft 0.5s forwards; /* Ajusta la duración si lo prefieres */
 }
 
+/* Animación de salida para el botón back */
+@keyframes slideOutRight {
+    0% {
+        transform: translateX(0);
+        background-color: #2B1900;
+    }
+
+    100% {
+        transform: translateX(-100%);
+        background-color: #A69273;
+    }
+}
+
+.body-slide-out-back {
+    animation: slideOutRight 0.5s forwards; /* Ajusta la duración si lo prefieres */
+}
 
 /*-------------------------------------------------------------------------------------------*/
 
