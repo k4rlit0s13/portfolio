@@ -80,3 +80,19 @@ document.getElementById('backbutton').addEventListener('click', function(event) 
     const url = this.querySelector('a').getAttribute('href');
     handleBackClick(event, url);
 });
+
+
+
+document.getElementById('hand').addEventListener('click', function(event) {
+    event.preventDefault(); // Evita que se cambie la página inmediatamente
+    
+    const particle = document.getElementById('particle');
+    
+    // Añadir la clase para activar la animación
+    particle.classList.add('particleout');
+
+    // Esperar a que la animación termine y luego redirigir
+    particle.addEventListener('animationend', function() {
+        window.location.href = './infos/aboutMe.html';
+    });
+});
