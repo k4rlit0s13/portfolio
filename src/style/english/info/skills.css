@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "jaro";
+    src: url(../../../storage/fonts/Jaro_24pt-Regular.ttf);
+}
+
+
+body{
+    user-select: none;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: #2B1900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+#imgbox{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 150px;
+    gap: 20px;
+}
+#leftHand{
+    /* background-color: aquamarine; */
+    width: 20%;
+}
+#potionSkills{
+    /* background-color: yellowgreen; */
+    width: 20%;
+}
+#rightHand{
+    /* background-color: salmon; */
+    width: 20%;
+}
+
+#leftHand img,
+#potionSkills img,
+#rightHand img{
+     width: 100%;
+     height: auto;
+}
+
+#backbutton{
+    /* background-color: blue; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#backbutton a {
+    width: 5%;
+    border: 10px solid #160d01;
+    color: #160d01;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 60px 5px 60px;
+    font-family: "jaro";
+    font-size: 3rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: none;
+    z-index: 1;
+}
+
+#backbutton a:hover {
+    color: white;
+    transform: scale(1.1);
+    border: 10px solid #ffffff;
+    box-shadow: 20px 20px 20px #160d004b;
+}
+
+
+
+
+
+
+@keyframes slidebottle {
+    0% {
+        transform: translateX(130vh);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+#potionSkills {
+    animation: slidebottle 2s forwards;
+}
+
+@keyframes slidehand {
+    0% {
+        transform: translateX(90vh) translateY(-10vh) rotate(20deg);
+    }
+
+    60% {
+        transform: translateX(-30vh) translateY(-10vh) rotate(20deg);    
+    }
+
+    90% {
+        transform: translateX(-22vh) translateY(-10vh) rotate(20deg);    
+    }
+}
+
+#rightHand {
+    animation: slidehand 3.3s forwards;
+}
+
+
