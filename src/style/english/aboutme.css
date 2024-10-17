@@ -376,11 +376,6 @@ body {
         cursor: default;
     }
 
-    #backbutton a {
-        padding: 10px 80px;
-    }
-
-
 
 }
 
@@ -413,11 +408,6 @@ body {
 
     #hand {
         cursor: pointer;
-        z-index: 10;
-    }
-
-    #handbotton {
-        z-index: 10;
     }
 
     #handbotton img {
