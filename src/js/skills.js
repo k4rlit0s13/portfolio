@@ -79,3 +79,19 @@ document.getElementById('backbutton').addEventListener('click', function(event) 
     const url = this.querySelector('a').getAttribute('href');
     handleBackClick(event, url);
 });
+
+
+document.getElementById('skillpotion').addEventListener('click', function(event) {
+    event.preventDefault(); // Evita la redirección inmediata
+    const curtineBox = document.getElementById('curtinebox');
+    
+    // Cambia el display a 'flex' y agrega la clase para iniciar la animación
+    curtineBox.classList.add('animate');
+    
+    // Escucha cuando la animación termine
+    curtineBox.addEventListener('animationend', function() {
+        // Redirige al finalizar la animación
+        window.location.href = './infos/skills.html';
+    }, { once: true }); // Escuchar solo una vez
+});
+

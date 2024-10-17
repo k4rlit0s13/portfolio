@@ -82,6 +82,7 @@ body {
 
 /* Animación de shake para #aboutme img */
 @keyframes shake-potion {
+
     0%,
     100% {
         transform: rotate(0);
@@ -151,7 +152,7 @@ body {
 
 @keyframes slideInRight {
     0% {
-        transform: translateX(200%);
+        transform: translateX(200vw);
         opacity: 0;
     }
 
@@ -186,9 +187,9 @@ body {
         transform: translateX(0);
         opacity: 1;
     }
-    
+
     100% {
-        transform: translateX(-200%);
+        transform: translateX(-200vw);
         opacity: 0;
     }
 }
@@ -196,6 +197,77 @@ body {
 #title.slideOutLeft {
     animation: slideOutLeft 0.6s ease-in-out forwards;
 }
+
+
+
+
+
+
+
+#curtinebox {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 200vh;
+}
+
+#particle {
+    width: 100%;
+    filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.32));
+}
+
+#particle img {
+    width: 100%;
+}
+
+#fill {
+    background-color: #D9D9D9;
+    z-index: 1;
+    width: 100vw;
+    height: 200vh;
+}
+
+
+
+@keyframes curtine {
+    0% {
+        bottom: 200vh;
+        ;
+    }
+
+    100% {
+        bottom: -100vh;;
+    }
+}
+
+#curtinebox.animate {
+    animation: curtine 2s forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*-------------------------------------------------------------------------------------------*/
@@ -210,7 +282,7 @@ body {
 
         100% {
             overflow-y: hidden;
-            overflow-x: hidden;        
+            overflow-x: hidden;
         }
     }
 
@@ -246,7 +318,7 @@ body {
 
         100% {
             overflow-y: hidden;
-            overflow-x: hidden;        
+            overflow-x: hidden;
         }
     }
 
