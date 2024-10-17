@@ -303,26 +303,9 @@ body {
 }
 
 
-
-
-@keyframes bubblesout {
-    0% {
-        transform: translatey(1500%);
-    }
-
-    100% {
-        transform: translatey(-1000%);
-    }
-}
-
-.animate-bubblesout {
-    animation: bubblesout 1.5s forwards;
-}
-
-
 @keyframes particleout {
     0% {
-        transform: translatey(150%);
+        transform: translatey(350%);
     }
 
     100% {
@@ -331,8 +314,25 @@ body {
 }
 
 #particle.particleout {
-    animation: particleout 1.5s forwards;
+    animation: particleout 1s forwards;
 }
+
+
+@keyframes bubblesout {
+    0% {
+        transform: translatey(1200%);
+    }
+
+    100% {
+        transform: translatey(-1000%);
+    }
+}
+
+.animate-bubblesout {
+    animation: bubblesout 1s forwards;
+}
+
+
 
 
 

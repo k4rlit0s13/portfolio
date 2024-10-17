@@ -5,6 +5,7 @@
 
 body {
     overflow: hidden;
+    overflow-y: auto;
     background-color: #2B1900;
     display: flex;
     flex-direction: column;
@@ -13,7 +14,7 @@ body {
 }
 
 #roll {
-    padding: 50px;
+    padding: 20px;
     /* background-color: aqua; */
     display: flex;
     flex-direction: row;
@@ -91,7 +92,7 @@ body {
 }
 
 
-/* @keyframes enter {
+@keyframes enter {
     0% {
         transform: translate(0, -500%);
     }
@@ -99,7 +100,7 @@ body {
     100% {
         transform: translate(0, 0);
     }
-} */
+}
 
 @keyframes stabilization {
     0% {
@@ -116,7 +117,7 @@ body {
 }
 
 #roll.enter-done {
-    animation: stabilization 3s infinite ease-in-out;
+    animation: stabilization 1s infinite ease-in-out;
 }
 
 @keyframes paperdesrollcenter {
@@ -129,8 +130,8 @@ body {
     }
 }
 
-#rollCenter{
-    animation: paperdesrollcenter 1s ease-in-out forwards;
+#rollCenter {
+    animation: paperdesrollcenter 3s ease-in-out forwards;
 }
 
 
@@ -144,8 +145,8 @@ body {
     }
 }
 
-#rollLeft{
-    animation: paperdesrollleft 1s ease-in-out forwards;
+#rollLeft {
+    animation: paperdesrollleft 3s ease-in-out forwards;
 }
 
 
@@ -159,8 +160,9 @@ body {
         transform: translate(0, 0);
     }
 }
-#rollRight{
-    animation: paperdesrollright 1s ease-in-out forwards;
+
+#rollRight {
+    animation: paperdesrollright 3s ease-in-out forwards;
 }
 
 @keyframes handdesrollleft {
@@ -172,8 +174,9 @@ body {
         transform: translate(0, 0) rotate(-20deg);
     }
 }
-#leftHand{
-    animation: handdesrollleft 1s ease-in-out forwards;
+
+#leftHand {
+    animation: handdesrollleft 3s ease-in-out forwards;
 
 }
 
@@ -186,23 +189,51 @@ body {
         transform: translate(0, 0) rotate(20deg);
     }
 }
-#rightHand{
-    animation: handdesrollright 1s ease-in-out forwards;
 
+#rightHand {
+    animation: handdesrollright 3s ease-in-out forwards;
 }
 
 
-#backbutton{
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*-------------------------------------------------------------------------------------------*/
 
 
 @media (max-width: 600px) {
     body {
+        /* background-color: red; */
         overflow-y: auto;
         overflow-x: hidden;
-        background-color: blue;
+        height: 100%    ;
     }
 
     #roll {
@@ -210,79 +241,183 @@ body {
     }
 
     #rollvertical {
-        background-color: aquamarine;
+        /* background-color: aquamarine; */
         width: 100%;
-        display: contents;
+        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        animation: stabilization 3s infinite ease-in-out;
+        position: relative;
+        animation:enter 2s forwards, stabilization 1s infinite ease-in-out;
     }
 
     #rollvertical img {
         width: 100%;
     }
 
-    #rollup{
+    #rollup {
         /* background-color: darkgreen; */
         width: 100%;
         position: relative;
-
+        top: -80px;
+        filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.344));
     }
-    #rollcentervertical{
+
+    #rollcentervertical {
         /* background-color: red; */
         width: 90%;
         z-index: -1;
         position: relative;
-
+        top: -100px;
+        transform: scale(1, 1.2);
     }
-    #rolldown{
+
+    #rolldown {
         /* background-color: palegreen; */
         width: 100%;
         position: relative;
-
+        top: -110px;
+        filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.344));
     }
-    #leftHandv{
+
+    #leftHandv {
         /* background-color: palevioletred; */
         width: 40%;
         transform: rotate(-50deg) rotateY(180deg);
         z-index: 1;
     }
-    #leftHandv img{
+
+    #leftHandv img {
         width: 100%;
     }
-    #rightHandv{
+
+    #rightHandv {
         /* background-color: peru; */
         width: 40%;
         transform: rotate(120deg);
         position: relative;
-
+        top: -200px;
     }
 
-    #backbutton{
-        /* background-color: red; */
-        width: 100vw;
+    #backbutton {
         z-index: 1;
-        display: flex;
-        justify-content: center;
-        position: relative;
-        top: 100px;
-        padding-bottom: 100px;
     }
-    #backbutton a{
 
+
+
+
+
+    @keyframes paperdesrollcenter {
+        0% {
+            transform: scale(1, 0.4);
+        }
+
+        100% {
+            transform: scale(1, 1.2);
+        }
+    }
+
+    #rollcentervertical {
+        animation: paperdesrollcenter 3s forwards;
+    }
+
+
+    @keyframes paperdesrollleft {
+        0% {
+            transform: translate(0, 25vh);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    #rollup {
+        animation: paperdesrollleft 3s forwards;
+    }
+
+
+
+    @keyframes paperdesrollup {
+        0% {
+            transform: translate(0, -25vh);
+        }
+
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    #rolldown {
+        animation: paperdesrollup 3s forwards;
+    }
+
+    @keyframes handdesrollleft {
+        0% {
+            transform: translate(0, 50vw) rotate(60deg);
+        }
+
+        100% {
+            transform: translate(0, 0) rotate(70deg);
+        }
+    }
+
+    #leftHandv {
+        animation: handdesrollleft 3s forwards;
+
+    }
+
+    @keyframes handdesrollright {
+        0% {
+            transform: translate(0, -25vh) rotate(100deg);
+        }
+
+        100% {
+            transform: translate(0, 0) rotate(120deg);
+        }
+    }
+
+    #rightHandv {
+        animation: handdesrollright 3s forwards;
     }
 
 
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (min-width: 601px) and (max-width: 1024px) {
     body {
         overflow-y: auto;
         overflow-x: hidden;
-        background-color: blue;
+        /* background-color: blue; */
         padding: 50px;
     }
 
@@ -305,35 +440,40 @@ body {
         width: 100%;
     }
 
-    #rollup{
+    #rollup {
         /* background-color: darkgreen; */
         width: 100%;
         position: relative;
         top: -100px;
     }
-    #rollcentervertical{
+
+    #rollcentervertical {
         /* background-color: red; */
         width: 90%;
         z-index: -1;
         position: relative;
         top: -205px;
     }
-    #rolldown{
+
+    #rolldown {
         /* background-color: palegreen; */
         width: 100%;
         position: relative;
         top: -313px;
     }
-    #leftHandv{
+
+    #leftHandv {
         /* background-color: palevioletred; */
         width: 40%;
         transform: rotate(-50deg) rotateY(180deg);
         z-index: 1;
     }
-    #leftHandv img{
+
+    #leftHandv img {
         width: 100%;
     }
-    #rightHandv{
+
+    #rightHandv {
         /* background-color: peru; */
         width: 40%;
         transform: rotate(120deg);
@@ -341,7 +481,7 @@ body {
         top: -440px;
     }
 
-    #backbutton{
+    #backbutton {
         /* background-color: red; */
         width: 100vw;
         z-index: 1;
@@ -350,7 +490,8 @@ body {
         position: relative;
         top: -150px;
     }
-    #backbutton a{
+
+    #backbutton a {
         /* background-color: red; */
         width: 100vw;
         z-index: 1;

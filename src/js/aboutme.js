@@ -60,41 +60,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const handImage = document.querySelector('#handbotton img'); // Selecciona la imagen dentro del botón
+    const handImage = document.querySelector('#handbotton img'); // Imagen del botón
+    const particle = document.getElementById('particle'); // Partícula
+    const bubbles = document.querySelectorAll('[id^="boubleparticle"]'); // Todas las burbujas
 
-    // Selecciona las partículas y burbujas
-    const particle = document.getElementById('particle');
-    const bubbles = [
-        document.getElementById('boubleparticle1'),
-        document.getElementById('boubleparticle2'),
-        document.getElementById('boubleparticle3'),
-        document.getElementById('boubleparticle4'),
-        document.getElementById('boubleparticle5')
-    ];
-
-    // Función que activa las animaciones
+    // Función que activa las animaciones y espera que todas terminen
     function activateAnimations() {
-        // Activa la animación en el div #particle
-        if (particle) {
-            particle.classList.add('particleout');
-        }
+        if (particle) particle.classList.add('particleout');
+        bubbles.forEach(bubble => bubble.classList.add('animate-bubblesout'));
 
-        // Activa la animación en cada burbuja
-        bubbles.forEach(bubble => {
-            if (bubble) {
-                bubble.classList.add('animate-bubblesout');
-            }
-        });
+        // Esperar a que terminen las animaciones
+        const elements = [...bubbles, particle]; // Combina las burbujas y la partícula
+        Promise.all(elements.map(el => new Promise(resolve => el.addEventListener('animationend', resolve))))
+            .then(() => window.location.href = handImage.parentElement.href); // Redirige cuando terminen
     }
 
-    // Añade el evento de click en la imagen dentro del div #handbotton
+    // Añade el evento de click en la imagen
     if (handImage) {
         handImage.addEventListener('click', (event) => {
-            event.preventDefault(); // Esto evita que redirija la página inmediatamente al hacer clic.
+            event.preventDefault(); // Evita redirección inmediata
             activateAnimations();
-            setTimeout(() => {
-                window.location.href = handImage.parentElement.href; // Redirige después de la animación
-            }, 1500); // Ajusta el tiempo si es necesario
         });
     }
 });
+
