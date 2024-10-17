@@ -4,7 +4,7 @@
 }
 
 body {
-    overflow: hidden;
+    overflow-x: hidden;
     overflow-y: auto;
     background-color: #2B1900;
     display: flex;
@@ -203,6 +203,49 @@ body {
 
 
 
+#particle {
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    position: absolute;
+}
+
+#particle img {
+    position: relative;
+    width: 100%;
+}
+
+#bodyparticle {
+    background-color: #D9D9D9;
+    width: 100%;
+    height: 2000px;
+}
+
+@keyframes bodyIntro {
+    0% {
+        opacity: 1;
+        top: -120vh;
+    }
+
+    100% {
+        opacity: 1;
+        top: 150vh;
+    }
+}
+
+#particle,
+#bodyparticle {
+    animation: bodyIntro 2s forwards;
+}
+
+
+
+
 
 
 
@@ -233,7 +276,7 @@ body {
         /* background-color: red; */
         overflow-y: auto;
         overflow-x: hidden;
-        height: 100%    ;
+        height: 100%;
     }
 
     #roll {
@@ -249,7 +292,7 @@ body {
         align-items: center;
         justify-content: center;
         position: relative;
-        animation:enter 2s forwards, stabilization 1s infinite ease-in-out;
+        animation: enter 2s forwards, stabilization 1s infinite ease-in-out;
     }
 
     #rollvertical img {
@@ -302,6 +345,8 @@ body {
 
     #backbutton {
         z-index: 1;
+        position: relative;
+        bottom: 105px;
     }
 
 
