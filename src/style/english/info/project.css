@@ -1,0 +1,85 @@
+@font-face {
+    font-family: "jaro";
+    src: url(../../../storage/fonts/Jaro_24pt-Regular.ttf);
+}
+
+body{
+    user-select: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0%;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    background-color: #2B1900;
+}
+
+#contentprojects{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+    padding-top: 50px;
+}
+#leftHand{
+    /* background-color: orange; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#leftHand img{
+    width: 60%;
+}
+#iframeboxdesignvertical{
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#iframeboxdesignvertical img{
+    width: 100%;
+}
+#rightHand{
+    /* background-color: darkturquoise; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#rightHand img{
+    width: 60%;
+}
+
+#contentprojects div{
+    width: 100%;
+}
+
+
+#backbutton a {
+    margin: 150px;
+    background-color: #2B1900;
+    border: 10px solid #160d01;
+    color: #160d01;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 60px 5px 60px;
+    font-family: "jaro";
+    font-size: 3rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: none;
+}
+
+#backbutton a:hover {
+    color: white;
+    transform: scale(1.1);
+    border: 10px solid #ffffff;
+    box-shadow: 20px 20px 20px #160d004b;
+}
