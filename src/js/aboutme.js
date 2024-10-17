@@ -1,4 +1,3 @@
-// home.js
 document.addEventListener('DOMContentLoaded', () => {
     const cursorElement = document.createElement('img');
     cursorElement.src = '../storage/img/rightHand.svg'; // Imagen inicial
@@ -7,96 +6,95 @@ document.addEventListener('DOMContentLoaded', () => {
     cursorElement.style.width = '350px'; // Ajusta el tamaño de la imagen
     cursorElement.style.height = '350px'; // Ajusta el tamaño de la imagen
     cursorElement.style.transform = 'translate(-120px, -160px)'; // Ajusta la posición para centrar el clic
+    cursorElement.style.zIndex = '10'; // Z-index moderado para no afectar otros elementos
     document.body.appendChild(cursorElement);
 
     // Cargar la posición del cursor desde localStorage
     const storedX = localStorage.getItem('cursorX');
     const storedY = localStorage.getItem('cursorY');
-    
+
     if (storedX && storedY) {
         cursorElement.style.left = `${storedX}px`;
         cursorElement.style.top = `${storedY}px`;
     }
 
+    // Función para actualizar la visibilidad del cursor
     function updateCursorVisibility() {
         if (window.innerWidth > 1040) {
             cursorElement.style.display = 'block'; // Mostrar cursor en pantallas grandes
             document.body.style.cursor = 'none'; // Ocultar cursor por defecto
         } else {
             cursorElement.style.display = 'none'; // Ocultar cursor en pantallas pequeñas
-            document.body.style.cursor = 'default'; // Asegúrate de que el cursor sea el predeterminado
+            document.body.style.cursor = 'default'; // Cursor por defecto
         }
     }
 
     updateCursorVisibility();
 
+    // Mover el cursor con el mouse
     document.addEventListener('mousemove', (event) => {
         cursorElement.style.left = `${event.clientX}px`;
         cursorElement.style.top = `${event.clientY}px`;
-
         // Almacenar la posición actual en localStorage
         localStorage.setItem('cursorX', event.clientX);
         localStorage.setItem('cursorY', event.clientY);
     });
 
+    // Actualizar visibilidad al redimensionar la ventana
     window.addEventListener('resize', updateCursorVisibility);
 
-    // Almacena el ID del temporizador
+    // Cambiar imagen al hacer clic y restaurarla
     let timeoutId;
-
     document.addEventListener('mousedown', () => {
-        // Cambiar a la imagen de "presionado"
-        cursorElement.src = '../storage/img/rightHandClose.svg';    
+        cursorElement.src = '../storage/img/rightHandClose.svg'; // Imagen de "presionado"
     });
-
     document.addEventListener('mouseup', () => {
-        // Restablecer la imagen después de un breve período
         clearTimeout(timeoutId); // Limpiar cualquier temporizador anterior
         timeoutId = setTimeout(() => {
-            cursorElement.src = '../storage/img/rightHand.svg'; // Volver a la imagen original después de 200 ms
+            cursorElement.src = '../storage/img/rightHand.svg'; // Restaurar la imagen original
         }, 100);
     });
 });
 
 
 
-function handleBackClick(event, url) {
-    event.preventDefault();
 
-    const handElement = document.getElementById('hand');
-    const titleElement = document.getElementById('title');
-    let animationsEnded = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    const handImage = document.querySelector('#handbotton img'); // Selecciona la imagen dentro del botón
 
-    [handElement, titleElement].forEach(element => {
-        element.classList.add(element.id === 'hand' ? 'slideOutBottom' : 'slideOutLeft');
-        element.addEventListener('animationend', () => {
-            animationsEnded++;
-            if (animationsEnded === 1) window.location.href = url;
-        });
-    });
-}
-
-document.getElementById('backbutton').addEventListener('click', function(event) {
-    const url = this.querySelector('a').getAttribute('href');
-    handleBackClick(event, url);
-});
-
-
-
-
-
-document.getElementById('handbotton').addEventListener('click', function(event) {
-    event.preventDefault(); // Evita que se cambie la página inmediatamente
-    
+    // Selecciona las partículas y burbujas
     const particle = document.getElementById('particle');
-    const bubbles = document.querySelectorAll('#boubleparticle1, #boubleparticle2, #boubleparticle3, #boubleparticle4, #boubleparticle5');
-    
-    // Añadir la clase para activar la animación
-    particle.classList.add('particleout');
-    bubbles.forEach(bubble => bubble.classList.add('animate-bubblesout'));
+    const bubbles = [
+        document.getElementById('boubleparticle1'),
+        document.getElementById('boubleparticle2'),
+        document.getElementById('boubleparticle3'),
+        document.getElementById('boubleparticle4'),
+        document.getElementById('boubleparticle5')
+    ];
 
-    // Esperar a que la animación termine y luego redirigir
-    particle.addEventListener('animationend', function() {
-        window.location.href = './infos/aboutMe.html';
-    });
+    // Función que activa las animaciones
+    function activateAnimations() {
+        // Activa la animación en el div #particle
+        if (particle) {
+            particle.classList.add('particleout');
+        }
+
+        // Activa la animación en cada burbuja
+        bubbles.forEach(bubble => {
+            if (bubble) {
+                bubble.classList.add('animate-bubblesout');
+            }
+        });
+    }
+
+    // Añade el evento de click en la imagen dentro del div #handbotton
+    if (handImage) {
+        handImage.addEventListener('click', (event) => {
+            event.preventDefault(); // Esto evita que redirija la página inmediatamente al hacer clic.
+            activateAnimations();
+            setTimeout(() => {
+                window.location.href = handImage.parentElement.href; // Redirige después de la animación
+            }, 1500); // Ajusta el tiempo si es necesario
+        });
+    }
 });

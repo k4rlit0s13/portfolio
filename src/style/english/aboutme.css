@@ -55,6 +55,7 @@ body {
     position: absolute;
     flex-direction: column;
     gap: 5vw;
+
 }
 
 #hand img {
@@ -149,87 +150,88 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    filter: drop-shadow(20px 20px 20px black);
+    filter: drop-shadow(0px 0px 20px black);
     width: 100%;
     transform: translateY(150vh);
 }
 
 #particle img {
     width: 100%;
+
 }
 
 #bodyparticle {
     background-color: #D9D9D9;
     width: 100%;
-    height: 100vh;
+    height: 1000px;
+    position: relative;
+    top: -3px;
 }
 
 #boubleparticle1 {
-    opacity: 0;
+    opacity: 1;
     background-color: #D9D9D9;
     position: absolute;
-    z-index: -1;
     border-radius: 100%;
     width: 200px;
     height: 200px;
-    right: 40%;
-    bottom: 10%;
+    right: 0%;
+    bottom: 0%;
+    transform: translatey(100vh);
+
 }
 
 #boubleparticle2 {
-    opacity: 0;
+    opacity: 1;
     background-color: #D9D9D9;
     position: absolute;
-    z-index: 1;
     border-radius: 100%;
     width: 50px;
     height: 50px;
     right: 30%;
     bottom: 60%;
+    transform: translatey(100vh);
+
 }
 
 #boubleparticle3 {
-    opacity: 0;
+    opacity: 1;
     background-color: #D9D9D9;
     position: absolute;
-    z-index: 1;
     border-radius: 100%;
     width: 150px;
     height: 150px;
     left: 10%;
     bottom: 30%;
+    transform: translatey(100vh);
+
 }
 
 
 #boubleparticle4 {
-    opacity: 0;
+    opacity: 1;
     background-color: #D9D9D9;
     position: absolute;
-    z-index: 1;
     border-radius: 100%;
     width: 150px;
     height: 150px;
     right: 10%;
     bottom: 30%;
+    transform: translatey(100vh);
 
 }
 
 #boubleparticle5 {
-    opacity: 0;
+    opacity: 1;
     background-color: #D9D9D9;
     position: absolute;
-    z-index: 1;
     border-radius: 100%;
     width: 100px;
     height: 100px;
     left: 40%;
     bottom: 50%;
-
+    transform: translatey(100vh);
 }
-
-
-
-
 
 
 
@@ -305,12 +307,10 @@ body {
 
 @keyframes bubblesout {
     0% {
-        opacity: 1;
         transform: translatey(1500%);
     }
 
     100% {
-        opacity: 1;
         transform: translatey(-1000%);
     }
 }
@@ -333,7 +333,6 @@ body {
 #particle.particleout {
     animation: particleout 1.5s forwards;
 }
-
 
 
 
@@ -373,10 +372,16 @@ body {
     #hand {
         max-width: 20vh;
     }
-
-    #hand img {
+    #handbotton img {
         cursor: default;
     }
+
+    #backbutton a {
+        padding: 10px 80px;
+    }
+
+
+
 }
 
 
@@ -404,6 +409,24 @@ body {
 
     #title {
         flex-direction: row;
+    }
+
+    #hand {
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    #handbotton {
+        z-index: 10;
+    }
+
+    #handbotton img {
+        width: 100%;
+        pointer-events: all;
+    }
+
+    #backbutton a {
+        padding: 10px 80px;
     }
 
 
