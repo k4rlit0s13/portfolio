@@ -6,8 +6,8 @@
 body {
     overflow-x: hidden;
     overflow-y: hidden;
-    width: auto;
-    height: 98vh;
+    width: 100vw;
+    height: auto;
     background-color: #2B1900;
     display: flex;
     flex-direction: column;
@@ -15,26 +15,23 @@ body {
     align-items: center;
 }
 
+
 #boxeducation {
-    /* background-color: red; */
+    background-color: red;
+    width: calc(100% - 110px); /* Resta el ancho total del padding (50px + 60px) */
     display: flex;
     flex-direction: row;
-    justify-content: start;
-    align-items: center;
+    overflow-x: auto;
     gap: 50px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: 32vw;   /* Espacio en el lado izquierdo */
-    padding-right: 32vw;  /* Espacio en el lado derecho */
-    width: 100vw;  /* Ocupar todo el ancho de la ventana */
-    overflow-x: scroll;  /* Scroll horizontal */
-    box-sizing: border-box; /* Asegura que el padding no deforme el tamaño */
+    padding-left: 50px;
+    padding-right: 60px;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
 }
 
-#boxeducation div {
-    /* background-color: orange; */
-    padding: 30px;
+#boxcertificate{
+    
 }
+
 
 #backbutton {
     /* background-color: turquoise; */
