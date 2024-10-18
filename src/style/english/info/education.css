@@ -1,0 +1,67 @@
+@font-face {
+    font-family: "jaro";
+    src: url(../../../storage/fonts/Jaro_24pt-Regular.ttf);
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: auto;
+    height: 98vh;
+    background-color: #2B1900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#boxeducation {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 32vw;   /* Espacio en el lado izquierdo */
+    padding-right: 32vw;  /* Espacio en el lado derecho */
+    width: 100vw;  /* Ocupar todo el ancho de la ventana */
+    overflow-x: scroll;  /* Scroll horizontal */
+    box-sizing: border-box; /* Asegura que el padding no deforme el tamaño */
+}
+
+#boxeducation div {
+    /* background-color: orange; */
+    padding: 30px;
+}
+
+#backbutton {
+    /* background-color: turquoise; */
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding-top: 40px;
+}
+
+#backbutton a {
+    background-color: #2B1900;
+    border: 10px solid #160d01;
+    color: #160d01;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 5px 60px;
+    font-family: "jaro";
+    font-size: 3rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: none;
+}
+
+#backbutton a:hover {
+    color: white;
+    transform: scale(1.1);
+    border: 10px solid #ffffff;
+    box-shadow: 20px 20px 20px #160d004b;
+}
