@@ -44,3 +44,23 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = 'auto';
   });
 });
+
+
+
+
+// Espera a que el documento esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+  const backLink = document.querySelector('#backbutton a'); // Selecciona el enlace dentro del backbutton
+
+  backLink.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevenir la acción predeterminada del enlace
+
+      // Iniciar la animación
+      document.body.style.animation = 'back 2s forwards'; // Aplica la animación al body
+
+      // Esperar a que la animación termine antes de redirigir
+      setTimeout(function() {
+          window.location.href = '../home.html'; // Redirigir a la página de inicio
+      }, 1000); // 3000 ms corresponde a la duración de la animación
+  });
+});

@@ -289,6 +289,21 @@ body {
 
 
 
+@keyframes back {
+    0% {
+        overflow-y: hidden;
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        overflow-y: hidden;
+        transform: translate(0, 200vh) rotate(0deg);
+    }
+}
+
+
+
+
 
 
 
@@ -424,8 +439,6 @@ body {
 
 
 
-
-
     @keyframes paperdesrollcenter {
         0% {
             transform: scale(1, 0.4);
@@ -501,6 +514,20 @@ body {
     }
 
 
+
+
+    @keyframes back {
+        0% {
+            overflow-y: hidden;
+            transform: translate(0, 0) rotate(0deg);
+        }
+    
+        100% {
+            overflow-y: hidden;
+            transform: translate(0, 200vh) rotate(0deg);
+        }
+    }
+    
 }
 
 
@@ -646,4 +673,23 @@ body {
         scrollbar-width: thin; /* Hacer el scrollbar delgado */
         scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0); /* Color del thumb y del track */
     }
+
+
+
+
+    @keyframes back {
+        0% {
+            overflow-y: hidden;
+            transform: translate(0, 0) rotate(0deg);
+        }
+    
+        100% {
+            overflow-y: hidden;
+            transform: translate(0, 600vh) rotate(0deg);
+        }
+    }
+
+    
+
+
 }
