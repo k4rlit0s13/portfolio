@@ -21,12 +21,18 @@ body {
     width: 100vw;
     display: flex;
     flex-direction: row;
-    overflow-x: auto; /* Habilita el desplazamiento horizontal */
+    overflow-x: scroll;
     gap: 50px;
-    cursor: grab; /* Mostrar la mano */
-    padding-left: 35vw;
-    padding-right: 35vw;
+    cursor: grab;
+    padding-left: 35vw; /* Reducir padding lateral */
+    padding-right: 35vw; /* Reducir padding lateral */
+    box-sizing: border-box; /* Asegura que el padding no expanda el ancho total */
+
+    scrollbar-color: deeppink #222;
+    scrollbar-width: thin;
 }
+
+
 
 .boxcertificate {
     background-color: blue;
@@ -82,4 +88,10 @@ body {
     transform: scale(1.1);
     border: 10px solid #ffffff;
     box-shadow: 20px 20px 20px #160d004b;
+}
+
+
+#boxeducation.active {
+    cursor: grabbing; /* Cambia el cursor cuando se arrastra */
+    cursor: -webkit-grabbing;
 }
