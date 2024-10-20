@@ -17,7 +17,7 @@ body {
 }
 
 #boxeducation {
-    background-color: red;
+    /* background-color: red; */
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -28,20 +28,20 @@ body {
     padding-right: 35vw; /* Reducir padding lateral */
     box-sizing: border-box; /* Asegura que el padding no expanda el ancho total */
 
-    scrollbar-color: deeppink #222;
+    scrollbar-color: rgba(252, 252, 252, 0) #22222200;
     scrollbar-width: thin;
 }
 
 
 
 .boxcertificate {
-    background-color: blue;
+    /* background-color: blue; */
     min-width: 300px; /* Asegura que cada certificado tenga un ancho mínimo para provocar scroll */
     flex: 0 0 auto; /* Evita que los elementos se reduzcan de tamaño */
 }
 
 .boxcertificate img {
-    background-color: orange;
+    /* background-color: orange; */
     width: 100%;
 }
 
@@ -51,13 +51,13 @@ body {
 }
 
 .boxcertificate {
-    background-color: blue;
+    /* background-color: blue; */
     min-width: 250px; /* Asegura que los certificados tengan un ancho mínimo */
     flex: 0 0 auto; /* Para que no se reduzcan */
 }
 
 .boxcertificate img {
-    background-color: orange;
+    /* background-color: orange; */
     width: 100%;
 }
 
