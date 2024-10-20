@@ -3,70 +3,94 @@
     src: url(../../../storage/fonts/Jaro_24pt-Regular.ttf);
 }
 
-
-body{
+body {
+    cursor: none !important;
     user-select: none;
-    overflow: hidden;
-    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
     background-color: #2B1900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#boxeducation {
+    cursor: none !important;
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 50px;
+    cursor: grab;
+    box-sizing: border-box;
+    padding: 0 10vw; /* Reducimos el padding lateral */
+    scrollbar-color: rgba(252, 252, 252, 0) #22222200;
+    scrollbar-width: thin;
+    position: relative;
+}
+
+.boxcertificate {
+    /* background-color: blue; */
+    cursor: none !important;
+    flex: 0 0 auto;
+    width: 20vw; /* Ajustar el ancho de los certificados */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: auto;
-    height: auto;
+    position: relative;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center; /* Asegurar que todo esté centrado */
 }
-#imgbox{
+
+.boxcertificate a{
+    /* background-color: green; */
+    cursor: none !important;
+    width: 70%;
+    text-decoration: none;
+}
+
+.boxcertificate img {
     /* background-color: red; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    margin: 150px;
-    gap: 20px;
 }
-#leftHand{
-    /* background-color: aquamarine; */
-    width: 20%;
-}
-#potionSkills{
+
+.boxcertificate h1 {
     /* background-color: yellowgreen; */
-    width: 20%;
-}
-#rightHand{
-    /* background-color: salmon; */
-    width: 20%;
-}
-
-#leftHand img,
-#potionSkills img,
-#rightHand img{
-     width: 100%;
-     height: auto;
+    color: white;
+    font-size: 2rem; /* Reducimos un poco el tamaño de la fuente */
+    font-family: "jaro";
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-#backbutton{
-    /* background-color: blue; */
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.boxcertificate:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px #02fff2);
 }
+
 #backbutton a {
-    width: 5%;
+    background-color: #2B1900;
     border: 10px solid #160d01;
     color: #160d01;
     border-radius: 20px;
     display: flex;
     justify-content: center;
-    padding: 5px 60px 5px 60px;
+    padding: 5px 60px;
     font-family: "jaro";
     font-size: 3rem;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
-    cursor: none;
-    z-index: 1;
 }
 
 #backbutton a:hover {
@@ -75,43 +99,3 @@ body{
     border: 10px solid #ffffff;
     box-shadow: 20px 20px 20px #160d004b;
 }
-
-
-
-
-
-
-@keyframes slidebottle {
-    0% {
-        transform: translateX(130vh);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-}
-
-
-#potionSkills {
-    animation: slidebottle 2s forwards;
-}
-
-@keyframes slidehand {
-    0% {
-        transform: translateX(90vh) translateY(-10vh) rotate(20deg);
-    }
-
-    60% {
-        transform: translateX(-30vh) translateY(-10vh) rotate(20deg);    
-    }
-
-    90% {
-        transform: translateX(-22vh) translateY(-10vh) rotate(20deg);    
-    }
-}
-
-#rightHand {
-    animation: slidehand 3.3s forwards;
-}
-
-
