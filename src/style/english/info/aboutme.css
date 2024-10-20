@@ -4,6 +4,7 @@
 }
 
 body {
+    user-select: none;
     overflow-x: hidden;
     overflow-y: auto;
     background-color: #2B1900;
@@ -14,8 +15,8 @@ body {
 }
 
 #roll {
-    padding: 20px;
     /* background-color: aqua; */
+    padding: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -69,6 +70,44 @@ body {
 }
 
 
+
+.scrollcontainer {
+    /* background-color: gray; */
+    position: absolute;
+    overflow-y: scroll; /* Permitir scroll vertical */
+    width: 70%;
+    height: 80%;
+    bottom: 15%;
+    left: 15%;
+    
+    /* Estilos para el scrollbar en Webkit (Chrome, Safari) */
+}
+
+.scrollcontainer::-webkit-scrollbar {
+    width: 8px; /* Ancho del scrollbar */
+}
+
+.scrollcontainer::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5); /* Color del "thumb" */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.scrollcontainer::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0); /* Color del área del scrollbar */
+}
+
+/* Estilos para el scrollbar en Firefox */
+.scrollcontainer {
+    scrollbar-width: thin; /* Hacer el scrollbar delgado */
+    scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0); /* Color del thumb y del track */
+}
+
+
+
+
+
+
+
 #backbutton a {
     border: 10px solid #160d01;
     color: #160d01;
@@ -117,7 +156,7 @@ body {
 }
 
 #roll.enter-done {
-    animation: stabilization 1s infinite ease-in-out;
+    animation: stabilization 5s infinite ease-in-out;
 }
 
 @keyframes paperdesrollcenter {
