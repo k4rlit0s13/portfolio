@@ -78,11 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const elements = [...bubbles, particle]; // Combina las burbujas y la partícula
         Promise.all(elements.map(el => new Promise(resolve => el.addEventListener('animationend', resolve))))
             .then(() => {
-                // Ocultar los elementos después de que la animación termine
-                particle.style.display = 'none';
-                bubbles.forEach(bubble => bubble.style.display = 'none');
-
-                // Redirigir a la nueva página
+                // Redirigir a la nueva página solo después de que las animaciones terminen
                 window.location.href = handImage.parentElement.href;
             });
     }

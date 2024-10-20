@@ -6,7 +6,6 @@
 body {
     user-select: none;
     overflow: hidden;
-    overflow-y: auto;
     background-color: #2B1900;
     margin: 0;
     padding: 0;
@@ -323,10 +322,12 @@ body {
 
 @keyframes bubblesout {
     0% {
+        overflow-y: hidden;
         transform: translatey(1200%);
     }
 
     100% {
+        overflow-y: hidden;
         transform: translatey(-1000%);
     }
 }
@@ -346,17 +347,18 @@ body {
 @media (max-width: 600px) {
     @keyframes bodyover {
         0% {
-            overflow-y: auto;
+            overflow-y: hidden;
             overflow-x: hidden;
         }
 
         100% {
-            overflow-y: auto;
+            overflow-y: scroll;
             overflow-x: hidden;
         }
     }
 
     body {
+        overflow-y: auto;
         animation: bodyover 0.6s ease-out forwards;
     }
 
@@ -391,7 +393,7 @@ body {
         }
 
         100% {
-            overflow-y: auto;
+            overflow-y: scroll;
             overflow-x: hidden;
         }
     }
