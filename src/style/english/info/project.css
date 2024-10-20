@@ -14,51 +14,48 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0; /* Asegura que no haya margen por defecto */
+    padding: 0;
 }
 
 #boxeducation {
     /* background-color: red; */
     width: 100vw;
+    height: 70vh;
     display: flex;
     flex-direction: row;
-    overflow-x: scroll;
-    gap: 50px;
+    overflow-x: auto; /* Mantener el scroll horizontal */
+    overflow-y: visible; /* Permitir que los hijos se salgan en vertical */
+    gap: 50px; /* Separación entre certificados */
     cursor: grab;
-    padding-left: 35vw; /* Reducir padding lateral */
-    padding-right: 35vw; /* Reducir padding lateral */
-    box-sizing: border-box; /* Asegura que el padding no expanda el ancho total */
-
-    scrollbar-color: rgba(252, 252, 252, 0) #22222200;
-    scrollbar-width: thin;
-}
-
-
-
-.boxcertificate {
-    /* background-color: blue; */
-    min-width: 300px; /* Asegura que cada certificado tenga un ancho mínimo para provocar scroll */
-    flex: 0 0 auto; /* Evita que los elementos se reduzcan de tamaño */
-}
-
-.boxcertificate img {
-    /* background-color: orange; */
-    width: 100%;
-}
-
-
-#boxeducation::-webkit-scrollbar-track {
-    background-color: transparent; /* Fondo del track transparente */
+    box-sizing: border-box;
+    padding: 0 35vw; /* Mantener el padding lateral */
+    scrollbar-color: rgba(252, 252, 252, 0) #22222200; /* Color de scrollbar */
+    scrollbar-width: thin; /* Ancho de scrollbar */
+    position: relative;
 }
 
 .boxcertificate {
     /* background-color: blue; */
-    min-width: 250px; /* Asegura que los certificados tengan un ancho mínimo */
-    flex: 0 0 auto; /* Para que no se reduzcan */
+    flex: 0 0 auto;
+    width: 30vw; /* Ajustar el ancho de los certificados */
+    overflow: visible; /* Asegurar que el hover no se corte */
+    position: relative;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    margin: 0; /* Elimina posibles márgenes externos */
 }
 
 .boxcertificate img {
-    /* background-color: orange; */
     width: 100%;
+    height: 100%;
+}
+
+h1{
+    color: white;
+}
+.boxcertificate:hover {
+    transform: scale(1.05); /* Aumentar tamaño en hover */
+    filter: drop-shadow(0 0 20px #ffee02); /* Sombra intensa */
 }
 
 #backbutton {
@@ -80,7 +77,6 @@ body {
     font-size: 3rem;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
-    cursor: none;
 }
 
 #backbutton a:hover {
@@ -88,10 +84,4 @@ body {
     transform: scale(1.1);
     border: 10px solid #ffffff;
     box-shadow: 20px 20px 20px #160d004b;
-}
-
-
-#boxeducation.active {
-    cursor: grabbing; /* Cambia el cursor cuando se arrastra */
-    cursor: -webkit-grabbing;
 }
