@@ -4,7 +4,8 @@
 }
 
 body {
-    cursor: none !important;
+    cursor: none;
+    /* Ocultar el cursor por defecto */
     user-select: none;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -15,7 +16,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0; /* Asegura que no haya margen por defecto */
+    margin: 0;
     padding: 0;
 }
 
@@ -26,14 +27,20 @@ body {
     height: 70vh;
     display: flex;
     flex-direction: row;
-    overflow-x: auto; /* Mantener el scroll horizontal */
-    overflow-y: hidden; /* Permitir que los hijos se salgan en vertical */
-    gap: 50px; /* Separación entre certificados */
+    overflow-x: auto;
+    /* Mantener el scroll horizontal */
+    overflow-y: hidden;
+    /* Permitir que los hijos se salgan en vertical */
+    gap: 50px;
+    /* Separación entre certificados */
     cursor: grab;
     box-sizing: border-box;
-    padding: 0 35vw; /* Mantener el padding lateral */
-    scrollbar-color: rgba(252, 252, 252, 0) #22222200; /* Color de scrollbar */
-    scrollbar-width: thin; /* Ancho de scrollbar */
+    padding: 0 35vw;
+    /* Mantener el padding lateral */
+    scrollbar-color: rgba(252, 252, 252, 0) #22222200;
+    /* Color de scrollbar */
+    scrollbar-width: thin;
+    /* Ancho de scrollbar */
     position: relative;
 }
 
@@ -41,11 +48,14 @@ body {
     /* background-color: blue; */
     cursor: none !important;
     flex: 0 0 auto;
-    width: 30vw; /* Ajustar el ancho de los certificados */
-    overflow: visible; /* Asegurar que el hover no se corte */
+    width: 30vw;
+    /* Ajustar el ancho de los certificados */
+    overflow: visible;
+    /* Asegurar que el hover no se corte */
     position: relative;
     transition: transform 0.3s ease, filter 0.3s ease;
-    margin: 0; /* Elimina posibles márgenes externos */
+    margin: 0;
+    /* Elimina posibles márgenes externos */
 }
 
 .boxcertificate img {
@@ -55,8 +65,10 @@ body {
 }
 
 .boxcertificate:hover {
-    transform: scale(1.05); /* Aumentar tamaño en hover */
-    filter: drop-shadow(0 0 20px #ffee02); /* Sombra intensa */
+    transform: scale(1.05);
+    /* Aumentar tamaño en hover */
+    filter: drop-shadow(0 0 20px #ffee02);
+    /* Sombra intensa */
 }
 
 #backbutton a {
@@ -78,4 +90,64 @@ body {
     transform: scale(1.1);
     border: 10px solid #ffffff;
     box-shadow: 20px 20px 20px #160d004b;
+}
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 600px) {
+    body {
+        cursor: default !important;
+        overflow-y: scroll;
+    }
+
+    .boxcertificate {
+        cursor: default !important;
+        width: 90vw;
+    }
+
+    #boxeducation {
+        cursor: default !important;
+    }
+
+    .boxcertificate {
+        cursor: default !important;
+    }
+
+    .boxcertificate img {
+        cursor: default !important;
+    }
+}
+
+/* Media Queries para pantallas medianas */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        cursor: default;
+        /* Cursor por defecto en pantallas medianas */
+        overflow-y: scroll;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+
+    .boxcertificate {
+        cursor: default !important;
+        width: 25vw;
+    }
+
+    #boxeducation {
+        cursor: grab !important;
+    }
+
+    .boxcertificate {
+        cursor: default !important;
+    }
+
+    .boxcertificate img {
+        cursor: default !important;
+    }
 }

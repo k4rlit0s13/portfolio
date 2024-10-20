@@ -9,15 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     cursorElement.style.zIndex = '10'; // Z-index moderado para no afectar otros elementos
     document.body.appendChild(cursorElement);
 
-    // Cargar la posición del cursor desde localStorage
-    const storedX = localStorage.getItem('cursorX');
-    const storedY = localStorage.getItem('cursorY');
-
-    if (storedX && storedY) {
-        cursorElement.style.left = `${storedX}px`;
-        cursorElement.style.top = `${storedY}px`;
-    }
-
     // Función para actualizar la visibilidad del cursor
     function updateCursorVisibility() {
         if (window.innerWidth > 1040) {
@@ -25,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.cursor = 'none'; // Ocultar cursor por defecto
         } else {
             cursorElement.style.display = 'none'; // Ocultar cursor en pantallas pequeñas
-            document.body.style.cursor = 'default'; // Cursor por defecto
+            document.body.style.cursor = 'default'; // Mostrar cursor por defecto
         }
     }
 
@@ -35,26 +26,22 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (event) => {
         cursorElement.style.left = `${event.clientX}px`;
         cursorElement.style.top = `${event.clientY}px`;
-        // Almacenar la posición actual en localStorage
-        localStorage.setItem('cursorX', event.clientX);
-        localStorage.setItem('cursorY', event.clientY);
     });
 
     // Actualizar visibilidad al redimensionar la ventana
     window.addEventListener('resize', updateCursorVisibility);
 
     // Cambiar imagen al hacer clic y restaurarla
-    let timeoutId;
     document.addEventListener('mousedown', () => {
         cursorElement.src = '../../storage/img/handpointselectclick.svg'; // Imagen de "presionado"
     });
     document.addEventListener('mouseup', () => {
-        clearTimeout(timeoutId); // Limpiar cualquier temporizador anterior
-        timeoutId = setTimeout(() => {
+        setTimeout(() => {
             cursorElement.src = '../../storage/img/handpointselect.svg'; // Restaurar la imagen original
         }, 100);
     });
 });
+
 
 
 
