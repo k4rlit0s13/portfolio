@@ -1,3 +1,67 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const cursorElement = document.createElement('img');
+    cursorElement.src = '../../storage/img/handpointselect.svg'; // Imagen inicial
+    cursorElement.style.position = 'absolute';
+    cursorElement.style.pointerEvents = 'none';
+    cursorElement.style.width = '350px'; // Ajusta el tamaño de la imagen
+    cursorElement.style.height = '350px'; // Ajusta el tamaño de la imagen
+    cursorElement.style.transform = 'translate(-30px, -60px)'; // Ajusta la posición para centrar el clic
+    cursorElement.style.zIndex = '10'; // Z-index moderado para no afectar otros elementos
+    document.body.appendChild(cursorElement);
+
+    // Cargar la posición del cursor desde localStorage
+    const storedX = localStorage.getItem('cursorX');
+    const storedY = localStorage.getItem('cursorY');
+
+    if (storedX && storedY) {
+        cursorElement.style.left = `${storedX}px`;
+        cursorElement.style.top = `${storedY}px`;
+    }
+
+    // Función para actualizar la visibilidad del cursor
+    function updateCursorVisibility() {
+        if (window.innerWidth > 1040) {
+            cursorElement.style.display = 'block'; // Mostrar cursor en pantallas grandes
+            document.body.style.cursor = 'none'; // Ocultar cursor por defecto
+        } else {
+            cursorElement.style.display = 'none'; // Ocultar cursor en pantallas pequeñas
+            document.body.style.cursor = 'default'; // Cursor por defecto
+        }
+    }
+
+    updateCursorVisibility();
+
+    // Mover el cursor con el mouse
+    document.addEventListener('mousemove', (event) => {
+        cursorElement.style.left = `${event.clientX}px`;
+        cursorElement.style.top = `${event.clientY}px`;
+        // Almacenar la posición actual en localStorage
+        localStorage.setItem('cursorX', event.clientX);
+        localStorage.setItem('cursorY', event.clientY);
+    });
+
+    // Actualizar visibilidad al redimensionar la ventana
+    window.addEventListener('resize', updateCursorVisibility);
+
+    // Cambiar imagen al hacer clic y restaurarla
+    let timeoutId;
+    document.addEventListener('mousedown', () => {
+        cursorElement.src = '../../storage/img/handpointselectclick.svg'; // Imagen de "presionado"
+    });
+    document.addEventListener('mouseup', () => {
+        clearTimeout(timeoutId); // Limpiar cualquier temporizador anterior
+        timeoutId = setTimeout(() => {
+            cursorElement.src = '../../storage/img/handpointselect.svg'; // Restaurar la imagen original
+        }, 100);
+    });
+});
+
+
+
+
+
+
+
 const boxEducation = document.getElementById('boxeducation');
 let isDown = false;
 let startX;
