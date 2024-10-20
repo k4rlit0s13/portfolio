@@ -54,25 +54,37 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorElement.src = '../storage/img/rightHand.svg'; // Restaurar la imagen original
         }, 100);
     });
-});
 
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
+    // -----------------------------------------
+    // Aquí comienza la parte de la animación
     const handImage = document.querySelector('#handbotton img'); // Imagen del botón
     const particle = document.getElementById('particle'); // Partícula
     const bubbles = document.querySelectorAll('[id^="boubleparticle"]'); // Todas las burbujas
 
+    // Inicialmente ocultar los elementos de animación
+    particle.style.display = 'none';
+    bubbles.forEach(bubble => bubble.style.display = 'none');
+
     // Función que activa las animaciones y espera que todas terminen
     function activateAnimations() {
+        // Mostrar los elementos antes de la animación
+        particle.style.display = 'block'; // Cambia a display block o flex según sea necesario
+        bubbles.forEach(bubble => bubble.style.display = 'block');
+
         if (particle) particle.classList.add('particleout');
         bubbles.forEach(bubble => bubble.classList.add('animate-bubblesout'));
 
         // Esperar a que terminen las animaciones
         const elements = [...bubbles, particle]; // Combina las burbujas y la partícula
         Promise.all(elements.map(el => new Promise(resolve => el.addEventListener('animationend', resolve))))
-            .then(() => window.location.href = handImage.parentElement.href); // Redirige cuando terminen
+            .then(() => {
+                // Ocultar los elementos después de que la animación termine
+                particle.style.display = 'none';
+                bubbles.forEach(bubble => bubble.style.display = 'none');
+
+                // Redirigir a la nueva página
+                window.location.href = handImage.parentElement.href;
+            });
     }
 
     // Añade el evento de click en la imagen
@@ -83,4 +95,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
