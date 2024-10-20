@@ -91,3 +91,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+// Añadir evento de clic al botón de retroceso
+const backButton = document.querySelector('#backbutton a');
+
+if (backButton) {
+    backButton.addEventListener('click', (event) => {
+        event.preventDefault(); // Evita la redirección inmediata
+
+        // Activar las animaciones de salida
+        const hand = document.getElementById('hand');
+        const title = document.getElementById('title');
+
+        if (hand) {
+            hand.classList.add('slideOutBottom'); // Añadir clase de animación
+        }
+
+        if (title) {
+            title.classList.add('slideOutLeft'); // Añadir clase de animación
+        }
+
+        // Esperar a que terminen las animaciones antes de redirigir
+        Promise.all([
+            new Promise(resolve => hand.addEventListener('animationend', resolve)),
+            new Promise(resolve => title.addEventListener('animationend', resolve))
+        ]).then(() => {
+            // Redirigir a la nueva página después de las animaciones
+            window.location.href = backButton.href;
+        });
+    });
+}
