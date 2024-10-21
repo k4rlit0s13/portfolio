@@ -15,17 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const animatedElements = document.querySelectorAll('#roll, #rollLeft, #rollCenter, #rollRight, #leftHand, #rightHand');
 
   // Oculta las otras animaciones al principio
-  animatedElements.forEach(el => el.style.visibility = 'hidden');
-
-  // Detecta cuando la animación del body termina
-  bodyElement.addEventListener('animationend', () => {
-      // Una vez que la animación del body termina, muestra y permite las otras animaciones
-      animatedElements.forEach(el => {
-          el.style.visibility = 'visible';
-          el.classList.add('enter-done'); // Asegura que las animaciones empiecen
-      });
+  animatedElements.forEach(el => {
+      el.style.visibility = 'visible';
   });
 });
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -64,3 +58,19 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 1000); // 3000 ms corresponde a la duración de la animación
   });
 });
+
+
+
+document.getElementById("backbutton").addEventListener("click", function(event) {
+  event.preventDefault(); // Evita la redirección inmediata
+  document.body.classList.add("animate-back"); // Añade la clase que activa la animación
+  
+  // Añadir el overflow hidden inmediatamente al iniciar la animación
+  document.body.style.overflow = "hidden";
+
+  // Espera a que termine la animación antes de redirigir (1s = 1000ms)
+  setTimeout(function() {
+      window.location.href = event.target.href; // Redirige después de 1 segundo
+  }, 1000); // Duración de la animación (1s)
+});
+
