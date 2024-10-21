@@ -32,7 +32,7 @@ body {
     box-sizing: border-box;
     padding: 0 10vw; /* Reducimos el padding lateral */
     scrollbar-color: rgba(252, 252, 252, 0) #22222200;
-    scrollbar-width: thin;
+    scrollbar-width: none;
     position: relative;
 }
 
@@ -91,6 +91,7 @@ body {
     font-size: 3rem;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
+    cursor: none ;
 }
 
 #backbutton a:hover {

@@ -71,7 +71,6 @@ body {
     font-size: 3rem;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
-    cursor: none;
 }
 
 #backbutton a:hover {

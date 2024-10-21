@@ -19,7 +19,7 @@ body {
 
 #boxeducation {
     /* background-color: red; */
-    cursor: none;
+    cursor: none !important;
     width: 100vw;
     display: flex;
     flex-direction: row;
@@ -31,7 +31,7 @@ body {
     box-sizing: border-box; /* Asegura que el padding no expanda el ancho total */
 
     scrollbar-color: rgba(252, 252, 252, 0) #22222200;
-    scrollbar-width: thin;
+    scrollbar-width: none;
 }
 
 
@@ -56,10 +56,12 @@ body {
 
 .boxcertificate img {
     /* background-color: orange; */
+    cursor: none;
     width: 100%;
 }
 
 #backbutton {
+    cursor: none;
     display: flex;
     justify-content: center;
     width: 100vw;
@@ -67,6 +69,7 @@ body {
 }
 
 #backbutton a {
+    cursor: none;
     background-color: #2B1900;
     border: 10px solid #160d01;
     color: #160d01;
@@ -82,19 +85,15 @@ body {
 }
 
 #backbutton a:hover {
+    cursor: none;
     color: white;
     transform: scale(1.1);
     border: 10px solid #ffffff;
     box-shadow: 20px 20px 20px #160d004b;
 }
 
-
-#boxeducation.active {
-    cursor: grabbing; /* Cambia el cursor cuando se arrastra */
-    cursor: -webkit-grabbing;
-}
-
 .boxcertificate:hover {
+    cursor: none;
     transform: scale(1.05); /* Aumenta el tamaño de la caja ligeramente */
     filter: drop-shadow(0 0 15px #ffee02); /* Agrega una sombra amarilla intensa */
     transition: transform 0.3s ease, filter 0.3s ease; /* Añade una transición suave para el hover */

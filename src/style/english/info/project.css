@@ -27,19 +27,13 @@ body {
     display: flex;
     flex-direction: row;
     overflow-x: auto;
-    /* Mantener el scroll horizontal */
     overflow-y: hidden;
-    /* Permitir que los hijos se salgan en vertical */
     gap: 50px;
-    /* Separación entre certificados */
     cursor: grab;
     box-sizing: border-box;
     padding: 0 35vw;
-    /* Mantener el padding lateral */
     scrollbar-color: rgba(252, 252, 252, 0) #22222200;
-    /* Color de scrollbar */
-    scrollbar-width: thin;
-    /* Ancho de scrollbar */
+    scrollbar-width: none;
     position: relative;
 }
 
@@ -48,13 +42,10 @@ body {
     cursor: none !important;
     flex: 0 0 auto;
     width: 30vw;
-    /* Ajustar el ancho de los certificados */
     overflow: visible;
-    /* Asegurar que el hover no se corte */
     position: relative;
     transition: transform 0.3s ease, filter 0.3s ease;
     margin: 0;
-    /* Elimina posibles márgenes externos */
 }
 
 .boxcertificate img {
@@ -65,9 +56,7 @@ body {
 
 .boxcertificate:hover {
     transform: scale(1.05);
-    /* Aumentar tamaño en hover */
     filter: drop-shadow(0 0 20px #ffee02);
-    /* Sombra intensa */
 }
 
 #backbutton a {
@@ -82,6 +71,7 @@ body {
     font-size: 3rem;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
+    cursor: none;
 }
 
 #backbutton a:hover {
