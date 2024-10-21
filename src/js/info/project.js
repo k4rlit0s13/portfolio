@@ -102,3 +102,14 @@ boxEducation.addEventListener('mouseleave', () => {
     isDown = false;
     boxEducation.classList.remove('active');
 });
+
+
+
+
+const whiteScreen = document.getElementById('whiteScreen');
+
+// Agregar un listener para detectar el final de la animación
+whiteScreen.addEventListener('animationend', () => {
+    // Al terminar la animación, cambiar el display a 'none'
+    whiteScreen.style.display = 'none';
+});

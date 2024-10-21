@@ -93,6 +93,28 @@ body {
 }
 
 
+@keyframes enter {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#whiteScreen{
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: white;
+}
+
+#whiteScreen {
+    animation: enter 1s forwards;
+}
+
 
 
 
