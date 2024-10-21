@@ -74,32 +74,39 @@ body {
 .scrollcontainer {
     /* background-color: gray; */
     position: absolute;
-    overflow-y: scroll; /* Permitir scroll vertical */
+    overflow-y: scroll;
+    /* Permitir scroll vertical */
     width: 70%;
     height: 80%;
     bottom: 15%;
     left: 15%;
-    
+
     /* Estilos para el scrollbar en Webkit (Chrome, Safari) */
 }
 
 .scrollcontainer::-webkit-scrollbar {
-    width: 8px; /* Ancho del scrollbar */
+    width: 8px;
+    /* Ancho del scrollbar */
 }
 
 .scrollcontainer::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.5); /* Color del "thumb" */
-    border-radius: 10px; /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.5);
+    /* Color del "thumb" */
+    border-radius: 10px;
+    /* Bordes redondeados */
 }
 
 .scrollcontainer::-webkit-scrollbar-track {
-    background-color: rgba(255, 255, 255, 0); /* Color del área del scrollbar */
+    background-color: rgba(255, 255, 255, 0);
+    /* Color del área del scrollbar */
 }
 
 /* Estilos para el scrollbar en Firefox */
 .scrollcontainer {
-    scrollbar-width: thin; /* Hacer el scrollbar delgado */
-    scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0); /* Color del thumb y del track */
+    scrollbar-width: thin;
+    /* Hacer el scrollbar delgado */
+    scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0);
+    /* Color del thumb y del track */
 }
 
 
@@ -252,6 +259,7 @@ body {
     padding: 0;
     width: 100vw;
     position: absolute;
+    top: -10vh;
 }
 
 #particle img {
@@ -273,7 +281,7 @@ body {
 
     100% {
         opacity: 1;
-        top: 150vh;
+        top: 160vh;
     }
 }
 
@@ -403,39 +411,34 @@ body {
         bottom: 105px;
     }
 
-
-
     .scrollcontainer {
         /* background-color: gray; */
         position: absolute;
-        overflow-y: scroll; /* Permitir scroll vertical */
+        overflow-y: scroll;
         width: 80%;
         height: 70%;
         bottom: 18%;
         left: 12%;
-        
-        /* Estilos para el scrollbar en Webkit (Chrome, Safari) */
     }
-    
+
     .scrollcontainer::-webkit-scrollbar {
-        width: 8px; /* Ancho del scrollbar */
+        width: 8px;
     }
-    
+
     .scrollcontainer::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.5); /* Color del "thumb" */
-        border-radius: 10px; /* Bordes redondeados */
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
     }
-    
+
     .scrollcontainer::-webkit-scrollbar-track {
-        background-color: rgba(255, 255, 255, 0); /* Color del área del scrollbar */
+        background-color: rgba(255, 255, 255, 0);
     }
-    
-    /* Estilos para el scrollbar en Firefox */
+
     .scrollcontainer {
-        scrollbar-width: thin; /* Hacer el scrollbar delgado */
-        scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0); /* Color del thumb y del track */
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0);
     }
-    
+
 
 
 
@@ -521,13 +524,13 @@ body {
             overflow-y: hidden;
             transform: translate(0, 0) rotate(0deg);
         }
-    
+
         100% {
             overflow-y: hidden;
             transform: translate(0, 200vh) rotate(0deg);
         }
     }
-    
+
 }
 
 
@@ -646,32 +649,39 @@ body {
     .scrollcontainer {
         /* background-color: gray; */
         position: absolute;
-        overflow-y: scroll; /* Permitir scroll vertical */
+        overflow-y: scroll;
+        /* Permitir scroll vertical */
         width: 75%;
         height: 70%;
         bottom: 18%;
         left: 14%;
-        
+
         /* Estilos para el scrollbar en Webkit (Chrome, Safari) */
     }
-    
+
     .scrollcontainer::-webkit-scrollbar {
-        width: 8px; /* Ancho del scrollbar */
+        width: 8px;
+        /* Ancho del scrollbar */
     }
-    
+
     .scrollcontainer::-webkit-scrollbar-thumb {
-        background-color: rgba(255, 255, 255, 0.5); /* Color del "thumb" */
-        border-radius: 10px; /* Bordes redondeados */
+        background-color: rgba(255, 255, 255, 0.5);
+        /* Color del "thumb" */
+        border-radius: 10px;
+        /* Bordes redondeados */
     }
-    
+
     .scrollcontainer::-webkit-scrollbar-track {
-        background-color: rgba(255, 255, 255, 0); /* Color del área del scrollbar */
+        background-color: rgba(255, 255, 255, 0);
+        /* Color del área del scrollbar */
     }
-    
+
     /* Estilos para el scrollbar en Firefox */
     .scrollcontainer {
-        scrollbar-width: thin; /* Hacer el scrollbar delgado */
-        scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0); /* Color del thumb y del track */
+        scrollbar-width: thin;
+        /* Hacer el scrollbar delgado */
+        scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0);
+        /* Color del thumb y del track */
     }
 
 
@@ -682,14 +692,14 @@ body {
             overflow-y: hidden;
             transform: translate(0, 0) rotate(0deg);
         }
-    
+
         100% {
             overflow-y: hidden;
             transform: translate(0, 600vh) rotate(0deg);
         }
     }
 
-    
+
 
 
 }
