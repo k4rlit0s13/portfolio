@@ -6,7 +6,7 @@
 body {
     user-select: none;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: scroll;
     background-color: #2B1900;
     margin: 0;
     padding: 0;
@@ -229,7 +229,7 @@ body {
     transform: scale(6, 6);
     display: none; /* Inicialmente oculto */
     transform-origin: center;
-}
+} 
 
 .flash-white {
     animation: particle 0.2s ease-in forwards;
@@ -274,17 +274,16 @@ body {
 
     body {
         animation: bodyover 0.6s ease-out forwards;
+        overflow-y: scroll !important;
     }
 
     #pro,
     #ject {
         font-size: 50vw;
-        /* Reducir el tamaño del texto */
     }
 
     #title {
         flex-direction: column;
-        /* Cambiar la dirección a vertical */
     }
     #hand {
         max-width: 20vh;
@@ -294,6 +293,26 @@ body {
         cursor: default;
     }
 
+
+    @keyframes particle {
+        0% {
+            transform: rotate(90deg) scale(6,6);
+        }
+        100% {
+            transform: rotate(90deg) scale(2, 2);
+        }
+    }
+    
+    #particle {
+        position: absolute;
+        display: auto;
+        transform-origin: center;
+        width: auto;
+        height: auto;
+    }
+    #particle img{
+        width: 100%;
+    }
 }
 
 
@@ -324,5 +343,7 @@ body {
     #title {
         flex-direction: row;
     }
+
+
 
 }
