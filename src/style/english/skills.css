@@ -5,7 +5,7 @@
 
 body {
     user-select: none;
-    overflow-y: scroll;
+    overflow-y: hidden;
     overflow-x: hidden;
     background-color: #2B1900;
     margin: 0;

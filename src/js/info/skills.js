@@ -115,3 +115,31 @@ boxEducation.addEventListener('mouseleave', () => {
     isDown = false;
     boxEducation.classList.remove('active');
 });
+
+
+// Selecciona el elemento #whiteScreen
+const whiteScreen = document.getElementById('whiteScreen');
+whiteScreen.addEventListener('animationend', () => {
+    whiteScreen.classList.add('hidden'); // Añade la clase que oculta el elemento
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Selecciona el botón de retroceso
+    const backButton = document.querySelector('#backbutton a');
+
+    // Añade un listener para detectar el clic
+    backButton.addEventListener('click', function(event) {
+        event.preventDefault();  // Evita la redirección inmediata
+
+        // Añade la clase que activa la animación al body
+        document.body.classList.add('animate-back');
+
+        // Espera a que termine la animación antes de redirigir
+        setTimeout(function() {
+            window.location.href = backButton.href;  // Redirige después de 2 segundos
+        }, 500); // 2000 ms = 2 segundos (tiempo de la animación)
+    });
+});
+
