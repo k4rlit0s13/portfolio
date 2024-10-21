@@ -201,6 +201,61 @@ body {
     animation: slideOutLeft 0.6s ease-in-out forwards;
 }
 
+
+
+
+
+
+@keyframes particle {
+    0% {
+        transform: scale(6, 6);
+    }
+    100% {
+        transform: scale(1.5, 1.5);
+    }
+}
+
+@keyframes flashWhite {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#particle {
+    position: absolute;
+    transform: scale(6, 6);
+    display: none; /* Inicialmente oculto */
+    transform-origin: center;
+}
+
+.flash-white {
+    animation: particle 0.2s ease-in forwards;
+}
+
+#whiteScreen {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 0; /* Comienza invisible */
+    display: none; 
+    z-index: 100; 
+}
+
+.fade-in-white {
+    display: block;
+    animation: flashWhite 0.5s ease-in forwards;
+}
+
+
+
+
+
+
+
 /*-------------------------------------------------------------------------------------------*/
 
 

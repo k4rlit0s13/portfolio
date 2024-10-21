@@ -1,4 +1,3 @@
-// home.js
 document.addEventListener('DOMContentLoaded', () => {
     const cursorElement = document.createElement('img');
     cursorElement.src = '../storage/img/leftHand.svg'; // Imagen inicial
@@ -79,4 +78,28 @@ function handleBackClick(event, url) {
 document.getElementById('backbutton').addEventListener('click', function(event) {
     const url = this.querySelector('a').getAttribute('href');
     handleBackClick(event, url);
+});
+
+
+document.getElementById('handbutton').addEventListener('click', (e) => {
+    e.preventDefault(); // Evita la navegación del enlace
+    
+    const particle = document.getElementById('particle');
+    const whiteScreen = document.getElementById('whiteScreen');
+
+    // Mostrar y activar la animación de la partícula
+    particle.style.display = 'block';
+    particle.classList.add('flash-white');
+
+    // Cuando termine la animación de la partícula, iniciar el flash blanco
+    particle.addEventListener('animationend', () => {
+        // Mostrar y activar la animación del panel blanco
+        whiteScreen.style.display = 'block';
+        whiteScreen.classList.add('fade-in-white');
+
+        // Después de la animación del flash blanco, hacer la redirección
+        whiteScreen.addEventListener('animationend', () => {
+            window.location.href = './infos/project.html'; // Redirigir a la página deseada
+        });
+    });
 });
