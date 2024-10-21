@@ -5,6 +5,7 @@
 
 body {
     user-select: none;
+    cursor: none;
     overflow-x: hidden;
     overflow-y: hidden;
     width: 100vw;
@@ -18,11 +19,12 @@ body {
 
 #boxeducation {
     /* background-color: red; */
+    cursor: none;
     width: 100vw;
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
-    gap: 50px;
+    gap: 0px;
     cursor: grab;
     padding-left: 35vw; /* Reducir padding lateral */
     padding-right: 35vw; /* Reducir padding lateral */
@@ -33,15 +35,9 @@ body {
 }
 
 
-
-.boxcertificate {
-    /* background-color: blue; */
-    min-width: 300px; /* Asegura que cada certificado tenga un ancho mínimo para provocar scroll */
-    flex: 0 0 auto; /* Evita que los elementos se reduzcan de tamaño */
-}
-
 .boxcertificate img {
     /* background-color: orange; */
+    cursor: none;
     width: 100%;
 }
 
@@ -52,7 +48,9 @@ body {
 
 .boxcertificate {
     /* background-color: blue; */
-    min-width: 250px; /* Asegura que los certificados tengan un ancho mínimo */
+    cursor: none;
+    padding: 50px;
+    width: 30vw; /* Asegura que los certificados tengan un ancho mínimo */
     flex: 0 0 auto; /* Para que no se reduzcan */
 }
 
@@ -95,3 +93,12 @@ body {
     cursor: grabbing; /* Cambia el cursor cuando se arrastra */
     cursor: -webkit-grabbing;
 }
+
+.boxcertificate:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la caja ligeramente */
+    filter: drop-shadow(0 0 15px #ffee02); /* Agrega una sombra amarilla intensa */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Añade una transición suave para el hover */
+}
+
+
+
