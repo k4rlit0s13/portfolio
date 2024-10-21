@@ -298,26 +298,6 @@ body {
 
 
 
-@keyframes back {
-    0% {
-        overflow-y: hidden;
-        transform: translate(0, 0) rotate(0deg);
-    }
-
-    100% {
-        overflow-y: hidden;
-        transform: translate(0, 200vh) rotate(0deg);
-    }
-}
-
-
-
-
-
-
-
-
-
 
 
 

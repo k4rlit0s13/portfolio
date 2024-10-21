@@ -113,3 +113,19 @@ whiteScreen.addEventListener('animationend', () => {
     // Al terminar la animación, cambiar el display a 'none'
     whiteScreen.style.display = 'none';
 });
+
+
+const backButton = document.querySelector('#backbutton a');
+
+// Prevenir el redireccionamiento inmediato
+backButton.addEventListener('click', function (event) {
+    event.preventDefault(); // Previene la redirección inmediata
+
+    // Aplicar la animación al body
+    document.body.style.animation = 'bodyback 1s forwards';
+
+    // Redirigir después de que la animación termine (2s)
+    setTimeout(() => {
+        window.location.href = backButton.href;
+    }, 500); // 2000ms (2 segundos) para que coincida con la duración de la animación
+});

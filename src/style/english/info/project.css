@@ -5,7 +5,6 @@
 
 body {
     cursor: none;
-    /* Ocultar el cursor por defecto */
     user-select: none;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -113,6 +112,37 @@ body {
 
 #whiteScreen {
     animation: enter 1s forwards;
+}
+
+
+
+@keyframes enter {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#whiteScreen{
+    animation: enter 2s forwards;
+}
+
+
+@keyframes bodyback {
+    0% {
+        left: 0vh;
+    }
+
+    100% {
+        left: 200vh;
+    }
+}
+
+body {
+    position: relative;
 }
 
 
