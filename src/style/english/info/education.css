@@ -4,6 +4,8 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     user-select: none;
     cursor: none;
     overflow-x: hidden;
@@ -100,4 +102,55 @@ body {
 }
 
 
+
+
+#curtinebox {
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+}
+#particle {
+    position: relative;
+    top: 10px;
+}
+
+#particle img {
+    width: 100%;
+}
+
+#fill {
+    background-color: #D9D9D9;
+    width: 100vw;
+    height: 130vh;
+}
+
+
+@keyframes enter {
+    0% {
+        transform: translateY(-10vh);
+    }
+    100% {
+        transform: translateY(150vh);
+    }
+}
+
+#curtinebox {
+    animation: enter 1s forwards;
+}
+
+
+
+
+@keyframes back {
+    0% {
+        transform: translateY(0vh);
+    }
+    100% {
+        transform: translateY(150vh);
+    }
+}
+
+body.back-animation {
+    animation: back 1s forwards;
+}
 

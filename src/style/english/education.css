@@ -157,6 +157,17 @@ body {
     animation: slideOutLeft 0.6s ease-in-out forwards;
 }
 
+
+
+
+
+#curtinebox {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+    transform: translateY(150vh);
+}
 #particle {
     position: relative;
     top: 10px;
@@ -172,13 +183,6 @@ body {
     height: 130vh;
 }
 
-#curtinebox {
-    /* display: none; */
-    position: absolute;
-    z-index: 100;
-    width: 100vw;
-    transform: translateY(150vh);
-}
 
 @keyframes curtine {
     0% {
@@ -190,6 +194,7 @@ body {
 }
 
 #curtinebox.animatecurtine {
+    display: block;
     animation: curtine 1s forwards; /* La animación se ejecuta durante 1 segundo */
 }
 

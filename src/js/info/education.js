@@ -115,3 +115,22 @@ boxEducation.addEventListener('mouseleave', () => {
     isDown = false;
     boxEducation.classList.remove('active');
 });
+
+
+
+document.addEventListener("DOMContentLoaded", init);
+
+function init() {
+    const backButton = document.getElementById("backbutton");
+    backButton.addEventListener("click", handleBackClick);
+}
+
+function handleBackClick(event) {
+    event.preventDefault(); // Prevenir la redirección inmediata
+    document.body.classList.add("back-animation"); // Agregar la clase para iniciar la animación
+
+    // Esperar a que termine la animación (1s en este caso) antes de redirigir
+    document.body.addEventListener("animationend", () => {
+        window.location.href = event.target.closest("a").href; // Redirigir después de la animación
+    }, { once: true });
+}
