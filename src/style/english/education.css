@@ -189,7 +189,7 @@ body {
     }
 }
 
-#curtinebox.animate-curtine {
+#curtinebox.animatecurtine {
     animation: curtine 1s forwards; /* La animación se ejecuta durante 1 segundo */
 }
 

@@ -1,3 +1,24 @@
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("handbutton").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevenir la redirección inmediata
+
+        const curtineBox = document.getElementById("curtinebox");
+
+        // Iniciar la animación
+        curtineBox.classList.add("animatecurtine");
+
+        // Escuchar el evento 'animationend' para redirigir
+        curtineBox.addEventListener('animationend', function() {
+            window.location.href = event.target.closest("a").href; // Redirigir después de la animación
+        }, { once: true }); // Asegura que este evento se escuche solo una vez
+    });
+});
+
+
+
+
+
+
 function handleBackClick(event, url) {
     event.preventDefault();
 
@@ -9,7 +30,7 @@ function handleBackClick(event, url) {
         element.classList.add(element.id === 'hand' ? 'slideOutBottom' : 'slideOutLeft');
         element.addEventListener('animationend', () => {
             animationsEnded++;
-            if (animationsEnded === 2) window.location.href = url;
+            if (animationsEnded === 1) window.location.href = url;
         });
     });
 }
@@ -57,18 +78,3 @@ box.addEventListener('mouseleave', () => {
 });
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("handbutton").addEventListener("click", function(event) {
-        event.preventDefault(); // Prevenir la redirección inmediata
-
-        const curtineBox = document.getElementById("curtinebox");
-
-        // Iniciar la animación
-        curtineBox.classList.add("animate-curtine");
-
-        // Esperar a que termine la animación (1s en este caso)
-        setTimeout(function() {
-            window.location.href = event.target.closest("a").href; // Redirigir después de la animación
-        }, 1000); // Duración de la animación
-    });
-});
