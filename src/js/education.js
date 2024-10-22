@@ -55,3 +55,20 @@ box.addEventListener('mouseleave', () => {
     isDown = false;
     box.style.cursor = 'grab'; // Asegura que el cursor vuelva a "grab"
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("handbutton").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevenir la redirección inmediata
+
+        const curtineBox = document.getElementById("curtinebox");
+
+        // Iniciar la animación
+        curtineBox.classList.add("animate-curtine");
+
+        // Esperar a que termine la animación (1s en este caso)
+        setTimeout(function() {
+            window.location.href = event.target.closest("a").href; // Redirigir después de la animación
+        }, 1000); // Duración de la animación
+    });
+});

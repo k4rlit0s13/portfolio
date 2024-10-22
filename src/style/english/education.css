@@ -19,15 +19,14 @@ body {
 }
 
 #title {
-    /* background-color: blue; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    animation: slideInRight 0.6s ease-in-out forwards;
 }
 
 #title p {
-    /* background-color: rebeccapurple; */
     font-family: "jaro";
     color: white;
     opacity: 20%;
@@ -39,12 +38,10 @@ body {
 #ion,
 #edu,
 #cat {
-    /* background-color: yellowgreen; */
     font-size: 20vw;
 }
 
 #hand {
-    /* background-color: red; */
     max-width: 80vh;
     display: flex;
     align-items: center;
@@ -52,11 +49,18 @@ body {
     position: absolute;
     flex-direction: column;
     gap: 5vw;
+    animation: slideInBotton 1.5s ease-in-out forwards;
 }
 
 #hand img {
-    /* background-color: aqua; */
     width: 100%;
+    animation: shake-potion 2.5s infinite ease-in-out;
+    filter: drop-shadow(0 0 15px rgba(31, 255, 1, 0.5));
+}
+
+#hand img:hover {
+    animation: scale-up-large 0.5s forwards;
+    filter: drop-shadow(0 0 50px rgba(31, 255, 1, 0.5));
 }
 
 #backbutton a {
@@ -66,7 +70,7 @@ body {
     border-radius: 20px;
     display: flex;
     justify-content: center;
-    padding: 5px 60px 5px 60px;
+    padding: 5px 60px;
     font-family: "jaro";
     font-size: 3rem;
     text-decoration: none;
@@ -80,100 +84,68 @@ body {
     box-shadow: 20px 20px 20px #160d004b;
 }
 
-/* Animación de shake para #aboutme img */
+/* Animaciones */
 @keyframes shake-potion {
-
-    0%,
-    100% {
+    0%, 100% {
         transform: scale(1);
     }
-
     25% {
         transform: scale(1.05);
     }
-
     50% {
         transform: scale(0.95);
     }
-
     75% {
         transform: scale(1.03);
     }
 }
 
-/* Animación de escalado grande */
 @keyframes scale-up-large {
-    0% {
+    0%, 100% {
         transform: scale(1);
     }
-
     50% {
         transform: scale(1.1);
     }
-
-    /* Tamaño de escala más grande */
-    100% {
-        transform: scale(1.1);
-    }
-
-    /* Mantener tamaño grande */
 }
-
-#hand img {
-    animation: shake-potion 2.5s infinite ease-in-out;
-    /* Mantener animación shake */
-    filter: drop-shadow(0 0 15px rgba(31, 255, 1, 0.5));
-}
-
-#hand img:hover {
-    animation: scale-up-large 0.5s forwards;
-    /* Usar la animación más grande */
-    animation-play-state: running;
-    /* Asegura que la animación se ejecute */
-    filter: drop-shadow(0 0 50px rgba(31, 255, 1, 0.5));
-}
-
-
-
 
 @keyframes slideInBotton {
     0% {
         transform: translateY(100vh);
     }
-
     100% {
         transform: translateY(0);
     }
 }
-
-#hand {
-    animation: slideInBotton 1.5s ease-in-out forwards;
-}
-
 
 @keyframes slideInRight {
     0% {
         transform: translateX(200%);
         opacity: 0;
     }
-
     100% {
         transform: translateX(0);
         opacity: 1;
     }
 }
 
-#title {
-    animation: slideInRight 0.6s ease-in-out forwards;
-}
-
 @keyframes slideOutBottom {
     0% {
         transform: translateY(0);
     }
-
     100% {
         transform: translateY(100vh);
+    }
+}
+
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-200%);
+        opacity: 0;
     }
 }
 
@@ -181,23 +153,50 @@ body {
     animation: slideOutBottom 1s ease-in-out forwards;
 }
 
-
-
-@keyframes slideOutLeft {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-    
-    100% {
-        transform: translateX(-200%);
-        opacity: 0;
-    }
-}
-
 #title.slideOutLeft {
     animation: slideOutLeft 0.6s ease-in-out forwards;
 }
+
+#particle {
+    position: relative;
+    top: 10px;
+}
+
+#particle img {
+    width: 100%;
+}
+
+#fill {
+    background-color: #D9D9D9;
+    width: 100vw;
+    height: 130vh;
+}
+
+#curtinebox {
+    /* display: none; */
+    position: absolute;
+    z-index: 100;
+    width: 100vw;
+    transform: translateY(150vh);
+}
+
+@keyframes curtine {
+    0% {
+        transform: translateY(150vh);
+    }
+    100% {
+        transform: translateY(-10vh);
+    }
+}
+
+#curtinebox.animate-curtine {
+    animation: curtine 1s forwards; /* La animación se ejecuta durante 1 segundo */
+}
+
+
+
+
+
 
 /*-------------------------------------------------------------------------------------------*/
 
