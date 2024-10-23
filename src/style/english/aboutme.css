@@ -406,6 +406,38 @@ body {
         cursor: default;
     }
 
+    @keyframes particleout {
+        0% {
+            overflow-y: hidden;
+            transform: translatey(350%);
+        }
+    
+        100% {
+            overflow-y: hidden;
+            transform: translatey(0);
+        }
+    }
+    
+    #particle.particleout {
+        animation: particleout 1s forwards;
+    }
+    
+    
+    @keyframes bubblesout {
+        0% {
+            overflow-y: hidden;
+            transform: translatey(1200%);
+        }
+    
+        100% {
+            overflow-y: hidden;
+            transform: translatey(-1000%);
+        }
+    }
+    
+    .animate-bubblesout {
+        animation: bubblesout 1s forwards;
+    }
 
 }
 
