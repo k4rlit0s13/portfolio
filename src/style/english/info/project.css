@@ -100,10 +100,6 @@ body {
     background-color: white;
 }
 
-#whiteScreen {
-    animation: enter 1s forwards;
-}
-
 
 
 @keyframes enter {
@@ -138,16 +134,16 @@ body {
 
 @keyframes enterelements {
     0% {
-        transform: translateX(120vh);
+        transform: translateY(120vh);
     }
 
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
-#boxeducation{
-    animation: enterelements 1s forwards;
+#boxeducation, #backbutton {
+    animation: enterelements 2s forwards;
 }
 
 

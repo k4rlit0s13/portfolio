@@ -148,7 +148,7 @@ body.animate-back {
 
 @keyframes enterelements {
     0% {
-        transform: translateY(120vh);
+        transform: translate(120vh);
     }
 
     100% {
@@ -156,7 +156,7 @@ body.animate-back {
     }
 }
 
-body{
+#boxeducation,#backbutton{
     animation: enterelements 1s forwards;
 }
 
