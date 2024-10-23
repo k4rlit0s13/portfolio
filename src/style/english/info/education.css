@@ -154,3 +154,30 @@ body.back-animation {
     animation: back 1s forwards;
 }
 
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 600px) {
+
+    .boxcertificate {
+        /* background-color: blue; */
+        cursor: none;
+        padding: 50px;
+        width: 65vw; /* Asegura que los certificados tengan un ancho mínimo */
+        flex: 0 0 auto; /* Para que no se reduzcan */
+    }
+}
+
+/* Media Queries para pantallas medianas */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .boxcertificate {
+        /* background-color: blue; */
+        cursor: none;
+        padding: 50px;
+        width: 60vw; /* Asegura que los certificados tengan un ancho mínimo */
+        flex: 0 0 auto; /* Para que no se reduzcan */
+    }
+}

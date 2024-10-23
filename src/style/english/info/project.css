@@ -6,8 +6,8 @@
 body {
     cursor: none;
     user-select: none;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
     width: 100vw;
     height: 100vh;
     background-color: #2B1900;
@@ -136,6 +136,19 @@ body {
 }
 
 
+@keyframes enterelements {
+    0% {
+        transform: translateX(120vh);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#boxeducation{
+    animation: enterelements 1s forwards;
+}
 
 
 /*-------------------------------------------------------------------------------------------*/

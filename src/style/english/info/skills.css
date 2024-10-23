@@ -144,3 +144,65 @@ body {
 body.animate-back {
     animation: back 1s forwards;
 }
+
+
+@keyframes enterelements {
+    0% {
+        transform: translateY(120vh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+body{
+    animation: enterelements 1s forwards;
+}
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 600px) {
+
+
+    body {
+        cursor: default !important;
+    }
+    
+    #boxeducation {
+        /* background-color: red; */
+        cursor: default !important;
+        gap: 0px;
+    }
+    
+    .boxcertificate {
+        /* background-color: blue; */
+        cursor: default !important;
+        width: 60vw;
+        padding: 0px;
+
+    }
+    
+    .boxcertificate a{
+        cursor: default !important;
+    }
+    
+    .boxcertificate:hover {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 20px #02fff2);
+    }
+}
+
+/* Media Queries para pantallas medianas */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .boxcertificate {
+        /* background-color: blue; */
+        cursor: default;
+        padding: 50px;
+        width: 60vw; /* Asegura que los certificados tengan un ancho mínimo */
+        flex: 0 0 auto; /* Para que no se reduzcan */
+    }
+}
