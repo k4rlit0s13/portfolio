@@ -202,7 +202,7 @@ body.animate-back {
         /* background-color: blue; */
         cursor: default;
         padding: 50px;
-        width: 60vw; /* Asegura que los certificados tengan un ancho mínimo */
+        width: 40vw; /* Asegura que los certificados tengan un ancho mínimo */
         flex: 0 0 auto; /* Para que no se reduzcan */
     }
 }
