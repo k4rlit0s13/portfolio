@@ -432,12 +432,10 @@ body {
 @keyframes slideOutRight {
     0% {
         transform: translateX(0);
-        background-color: #2B1900;
     }
 
     100% {
         transform: translateX(-100%);
-        background-color: #A69273;
     }
 }
 
