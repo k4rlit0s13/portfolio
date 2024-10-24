@@ -97,7 +97,7 @@ body {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    background-color: white;
+    background-color: #FFCE08;
 }
 
 
@@ -119,11 +119,11 @@ body {
 
 @keyframes bodyback {
     0% {
-        left: 0vh;
+        transform: translateY(0);
     }
 
     100% {
-        left: 200vh;
+        transform: translateY(120vh);
     }
 }
 
