@@ -78,10 +78,15 @@ body {
     overflow-y: scroll;
     /* Permitir scroll vertical */
     width: 70%;
-    height: 80%;
-    bottom: 15%;
+    height: 85%;
+    bottom: 7%;
     left: 15%;
-
+    padding: 10px;
+    /* Sombra desenfocada en el interior */
+    box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.3),
+        /* sombra superior */
+        inset 0 -10px 15px rgba(0, 0, 0, 0.3);
+    /* sombra inferior */
 }
 
 .scrollcontainer::-webkit-scrollbar {
@@ -137,10 +142,114 @@ body {
 }
 
 
+
+
+#littleimages {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.link {
+    display: flex;
+}
+
+.link:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0px 0px 10px #fffffcf8);
+}
+
+#about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#about img {
+    /* background-color: red; */
+    width: 80%;
+}
+
+#professional div{
+    /* background-color: yellow; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#business div{
+    /* background-color: yellow; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#audience div{
+    /* background-color: yellow; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#mission div{
+    /* background-color: yellow; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#vision div{
+    /* background-color: yellow; */
+    width: 100%;
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#about img {
+    /* background-color: yellow; */
+    width: 80%;
+}
+
+#professional img{
+    /* background-color: red; */
+}
+#business img{
+    /* background-color: red; */
+    width: 50%;
+}
+#audience img{
+    /* background-color: red; */
+    width: 50%;
+}
+#mission img{
+    /* background-color: red; */
+    width: 50%;
+}
+#vision img{
+    /* background-color: red; */
+    width: 50%;
+}
+
+
 @keyframes enter {
     0% {
         transform: translate(0, -500vh);
     }
+
     100% {
         transform: translate(0, 0);
     }
@@ -302,6 +411,7 @@ body {
     0% {
         transform: translateY(0);
     }
+
     100% {
         transform: translateY(130vh);
     }
@@ -309,7 +419,8 @@ body {
 
 body.animate-back {
     animation: back 2s forwards;
-    overflow: hidden; /* Asegura que el contenido no sea visible durante la animación */
+    overflow: hidden;
+    /* Asegura que el contenido no sea visible durante la animación */
 }
 
 
@@ -408,9 +519,15 @@ body.animate-back {
         position: absolute;
         overflow-y: scroll;
         width: 80%;
-        height: 70%;
-        bottom: 18%;
-        left: 12%;
+        height: 80%;
+        bottom: 9%;
+        left: 9%;
+        padding: 10px;
+        /* Sombra desenfocada en el interior */
+        box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.3),
+            /* sombra superior */
+            inset 0 -10px 15px rgba(0, 0, 0, 0.3);
+        /* sombra inferior */
     }
 
     .scrollcontainer::-webkit-scrollbar {
