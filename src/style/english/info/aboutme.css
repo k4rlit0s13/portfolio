@@ -245,6 +245,32 @@ body {
 }
 
 
+
+
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @keyframes enter {
     0% {
         transform: translate(0, -500vh);
